@@ -1,0 +1,11 @@
+.menu-button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 1.5em !important;
+  height: 1.5em !important;
+}
