@@ -7,22 +7,24 @@ import MicIcon from "@mui/icons-material/Mic";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import AppsIcon from "@mui/icons-material/Apps";
 import VideoCameraFrontOutlinedIcon from "@mui/icons-material/VideoCameraFrontOutlined";
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Menu from "./Menu";
 import { Avatar } from "@mui/material";
 
 function Header() {
+  const user: any = false;
+
   return (
     <div className="header">
       <div className="header-left">
         <button className="header-menu">
           <MenuIcon className="header-menuIcon" />
         </button>
-        <button className="header-title">
+        <button className="header-logo">
           <YouTubeIcon className="header-icon" />
-          <p>
-            YouTube
-            <span className="locale">AU</span>
-          </p>
+          <p className="header-title">YouTube</p>
+          <p className="locale">AU</p>
         </button>
       </div>
       <form className="header-search">
@@ -35,10 +37,21 @@ function Header() {
         </button>
       </form>
       <div className="header-right">
-        <Menu Icon={VideoCameraFrontOutlinedIcon} />
+        {user && <Menu Icon={VideoCameraFrontOutlinedIcon} />}
         <Menu Icon={AppsIcon} />
-        <Menu Icon={NotificationsOutlinedIcon} />
-        <Menu avatar="?" />
+        {user ? (
+          <Menu Icon={NotificationsOutlinedIcon} />
+        ) : (
+          <Menu Icon={MoreVertIcon} />
+        )}
+        {user ? (
+          <Menu avatar="?" />
+        ) : (
+          <button className="sign-in">
+            <AccountCircleOutlinedIcon className="sign-in-icon" />
+            <p>Sign In</p>
+          </button>
+        )}
       </div>
     </div>
   );
