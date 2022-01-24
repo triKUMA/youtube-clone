@@ -1,0 +1,48 @@
+.topics-bar {
+  border-top: 1px solid var(--secondary-colour);
+  border-bottom: 1px solid var(--secondary-colour);
+  height: 3.5em;
+  display: flex;
+  align-items: center;
+  padding-inline: 1em;
+  overflow: hidden;
+  overflow-x: auto;
+  scrollbar-width: none;
+  background-color: var(--primary-colour);
+}
+
+.topic {
+  white-space: nowrap;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+.topics-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.topic {
+  padding: 0.45em 0.8em;
+  margin-inline: 0.4em;
+  border-radius: 5em;
+  border: 1px solid var(--secondary-colour);
+  outline: none;
+  cursor: pointer;
+  color: var(--text-colour);
+  background-color: var(--background-colour);
+  font-size: 14px;
+  letter-spacing: 0.5px;
+
+  transition: background 0.25s ease;
+}
+
+.topic:hover {
+  background-color: #e5e5e5;
+  transition: background 0.25s ease;
+}
+
+.topic.active {
+  background-color: var(--text-colour);
+  color: var(--primary-colour);
+  border: 1px solid var(--text-colour);
+}

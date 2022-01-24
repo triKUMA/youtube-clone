@@ -1,0 +1,35 @@
+.sidebarElement {
+  display: flex;
+  align-items: center;
+  height: 3em;
+  background: none;
+  border: none;
+  width: 100%;
+}
+
+.icon {
+  padding-inline: 0.9em;
+}
+
+.sidebarElement > p {
+  font-size: 14px;
+}
+.signIn-description {
+}
+
+.sign-in {
+  padding-block: 0.35em;
+}
+
+.sidebarElement:hover {
+  background-color: var(--background-colour);
+}
+
+.sidebarElement.active {
+  background-color: #e0e0e0;
+  font-weight: 600;
+}
+
+.sidebarElement.active:hover {
+  background-color: var(--secondary-colour);
+}

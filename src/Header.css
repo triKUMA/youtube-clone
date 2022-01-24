@@ -1,16 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap");
 
 .header {
+  position: fixed;
+  padding-inline: 1em;
+  top: 0;
+  left: 0;
+  width: 98%;
+  height: var(--header-height);
   display: flex;
+  align-items: center;
+  background-color: var(--primary-colour);
+  display: flex;
+  justify-content: space-between;
+  /* display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 9000;
   justify-content: space-between;
   background-color: white;
   padding: 0.5em 1em;
+  height: var(--header-height); */
 }
 
 .header-left {
   display: flex;
   align-items: center;
-  background-color: white;
   border: none;
   cursor: pointer;
 }
@@ -26,6 +40,7 @@
 .header-menuIcon {
   height: 1.15em !important;
   width: 1.15em !important;
+  color: var(--text-colour);
 }
 
 .header-logo {
@@ -37,11 +52,15 @@
   cursor: pointer;
 }
 
+.header-logo > p {
+  color: var(--text-colour);
+}
+
 .header-icon {
   object-fit: contain;
   height: 35px !important;
   width: 35px !important;
-  color: red;
+  color: var(--accent-colour);
 }
 
 .header-title {
@@ -72,7 +91,8 @@
   flex: 1;
   padding: 0.75em;
   outline: none;
-  border: 1px solid lightgrey;
+  border: 1px solid var(--secondary-colour);
+  background: none;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
   height: 0.9em;
@@ -84,12 +104,17 @@
 .header-search-submit {
   width: 4.75em;
   height: 3em;
-  background-color: whitesmoke;
-  border: 1px solid lightgrey;
+  color: var(--text-colour);
+  background-color: var(--background-colour);
+  border: 1px solid var(--secondary-colour);
   border-left: none;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
   cursor: pointer;
+}
+
+.header-search-submit:hover {
+  background-color: #f0f0f0;
 }
 
 .header-search-voice {
@@ -99,7 +124,8 @@
   padding: 0.25em;
   border: none;
   margin-left: 0.5em;
-  background-color: whitesmoke;
+  color: var(--text-colour);
+  background-color: var(--background-colour);
   cursor: pointer;
 }
 
@@ -119,14 +145,14 @@
   align-items: center;
   background: none;
   outline: none;
-  border: 1px solid #065fd4;
+  border: 1px solid var(--signin-colour);
   border-radius: 2px;
   cursor: pointer;
   width: 8em;
 }
 
 .sign-in > * {
-  color: #065fd4;
+  color: var(--signin-colour);
 }
 
 .sign-in > p {

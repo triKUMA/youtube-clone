@@ -1,0 +1,9 @@
+:root {
+  --header-height: 3.5em;
+  --primary-colour: white;
+  --secondary-colour: lightgrey;
+  --background-colour: whitesmoke;
+  --text-colour: black;
+  --accent-colour: red;
+  --signin-colour: #065fd4;
+}
