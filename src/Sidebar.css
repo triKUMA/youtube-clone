@@ -1,6 +1,8 @@
 .sidebar {
-  min-width: 15em;
-  max-width: 15em;
+  position: fixed;
+  top: var(--header-height);
+  min-width: var(--sidebar-width);
+  max-width: var(--sidebar-width);
   height: calc(100% - var(--header-height) * 1.4);
   overflow-y: auto;
   background-color: var(--primary-colour);

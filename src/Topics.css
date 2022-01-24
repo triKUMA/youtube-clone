@@ -1,12 +1,14 @@
 .topics-bar {
+  position: fixed;
   border-top: 1px solid var(--secondary-colour);
   border-bottom: 1px solid var(--secondary-colour);
   height: 3.5em;
+  width: calc(100% - var(--sidebar-width) - 2.5em);
   display: flex;
   align-items: center;
   padding-inline: 1.2em;
   overflow: hidden;
-  overflow-x: auto;
+  overflow-x: scroll;
   scrollbar-width: none;
   background-color: var(--primary-colour);
 }
