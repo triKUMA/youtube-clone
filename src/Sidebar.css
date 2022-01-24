@@ -1,6 +1,7 @@
 .sidebar {
   min-width: 15em;
-  height: calc(100% - var(--header-height));
+  max-width: 15em;
+  height: calc(100% - var(--header-height) * 1.4);
   overflow-y: auto;
   background-color: var(--primary-colour);
   scrollbar-width: thin;
@@ -22,6 +23,61 @@
 .separator {
   width: 100%;
   border-top: 1px solid #e5e5e5;
-  margin-top: 0.75em;
+  margin-top: 0.5em;
   margin-bottom: 0.5em;
+}
+
+.signIn-prompt {
+  padding-inline: 2em;
+}
+
+.signIn-prompt > * {
+  margin-block: 1em;
+}
+
+.signIn-description {
+  font-size: 14.5px;
+}
+
+.signIn.sidebar-signIn {
+  padding-block: 0.35em;
+  margin-bottom: 1.25em;
+}
+
+.sidebar-group-title {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 600;
+  color: #606060;
+  margin-left: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+.sidebar-footer {
+  margin-left: 1.25em;
+  margin-top: 0.75em;
+}
+
+.sidebar-footer-group {
+  margin-block: 0.5em;
+  line-height: 1em;
+}
+
+.sidebar-footer-entry {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  color: #606060;
+}
+
+.trademark {
+  margin-top: 1.25em;
+  margin-bottom: 0.75em;
+  padding-left: 2px;
+  color: #7d7d7d;
+  font-size: 12px;
 }

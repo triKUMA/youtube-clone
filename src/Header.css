@@ -139,7 +139,7 @@
   margin-left: 1em;
 }
 
-.sign-in {
+.signIn {
   display: flex;
   padding: 0.55em 0.8em;
   align-items: center;
@@ -151,16 +151,16 @@
   width: 8em;
 }
 
-.sign-in > * {
+.signIn > * {
   color: var(--signin-colour);
 }
 
-.sign-in > p {
+.signIn > p {
   text-transform: uppercase;
   font-weight: 500;
 }
 
-.sign-in-icon {
+.signIn-icon {
   margin-right: 0.35em;
 }
 

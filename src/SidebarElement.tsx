@@ -9,13 +9,28 @@ interface SidebarElementProps {
     muiName: string;
   };
   iconVariant?: boolean;
+  youtubeVariant?: boolean;
   title: string;
 }
 
-function SidebarElement({ active, Icon, title }: SidebarElementProps) {
+function SidebarElement({
+  active,
+  Icon,
+  iconVariant,
+  youtubeVariant,
+  title,
+}: SidebarElementProps) {
   return (
     <button className={active ? "sidebarElement active" : "sidebarElement"}>
-      {<Icon className="icon" />}
+      {
+        <Icon
+          className={
+            "icon" +
+            (iconVariant ? " rounded" : "") +
+            (youtubeVariant ? " red" : "")
+          }
+        />
+      }
       <p>{title}</p>
     </button>
   );

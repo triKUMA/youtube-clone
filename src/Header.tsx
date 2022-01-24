@@ -47,8 +47,8 @@ function Header() {
         {user ? (
           <Menu avatar="?" />
         ) : (
-          <button className="sign-in">
-            <AccountCircleOutlinedIcon className="sign-in-icon" />
+          <button className="signIn">
+            <AccountCircleOutlinedIcon className="signIn-icon" />
             <p>Sign In</p>
           </button>
         )}

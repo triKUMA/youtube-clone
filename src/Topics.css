@@ -4,17 +4,11 @@
   height: 3.5em;
   display: flex;
   align-items: center;
-  padding-inline: 1em;
+  padding-inline: 1.2em;
   overflow: hidden;
   overflow-x: auto;
   scrollbar-width: none;
   background-color: var(--primary-colour);
-}
-
-.topic {
-  white-space: nowrap;
-  margin: 0.5em;
-  padding: 0.5em;
 }
 
 .topics-bar::-webkit-scrollbar {
@@ -22,7 +16,7 @@
 }
 
 .topic {
-  padding: 0.45em 0.8em;
+  padding: 0.45em 0.9em;
   margin-inline: 0.4em;
   border-radius: 5em;
   border: 1px solid var(--secondary-colour);
@@ -32,6 +26,7 @@
   background-color: var(--background-colour);
   font-size: 14px;
   letter-spacing: 0.5px;
+  white-space: nowrap;
 
   transition: background 0.25s ease;
 }

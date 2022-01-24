@@ -8,17 +8,11 @@
 }
 
 .icon {
-  padding-inline: 0.9em;
+  margin-inline: 0.9em;
 }
 
 .sidebarElement > p {
   font-size: 14px;
-}
-.signIn-description {
-}
-
-.sign-in {
-  padding-block: 0.35em;
 }
 
 .sidebarElement:hover {
@@ -27,9 +21,25 @@
 
 .sidebarElement.active {
   background-color: #e0e0e0;
-  font-weight: 600;
 }
 
 .sidebarElement.active:hover {
   background-color: var(--secondary-colour);
+}
+
+.rounded.icon {
+  object-fit: contain;
+  width: 16px !important;
+  height: 16px !important;
+  padding: 0.15em 0.15em 0.17em 0.182em;
+}
+
+.rounded {
+  border-radius: 10em;
+  background-color: #404040;
+  color: white;
+}
+
+.rounded.red {
+  background-color: red;
 }
