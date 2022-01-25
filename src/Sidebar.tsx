@@ -167,11 +167,32 @@ function Sidebar(props: SidebarProps) {
               <p className="sidebar-group-title">Subscriptions</p>
               <SidebarElement avatar="?" title="ABC News (Australia)" isLive />
               <SidebarElement avatar="?" title="CreepsMcPasta" isLive />
-              <SidebarElement avatar="?" title="Bloomberg Quicktake" isLive />
-              <SidebarElement avatar="?" title="NASA" />
-              <SidebarElement avatar="?" title="avex" notification />
-              <SidebarElement avatar="?" title="Joma Tech" notification />
-              <SidebarElement avatar="?" title="Sibonggyun 시봉균" />
+              <SidebarElement
+                avatar="?"
+                title="Bloomberg Quicktake"
+                isLive={Math.random() < 0.6}
+                notification={Math.random() < 0.4}
+              />
+              <SidebarElement
+                avatar="?"
+                title="NASA"
+                notification={Math.random() < 0.4}
+              />
+              <SidebarElement
+                avatar="?"
+                title="avex"
+                notification={Math.random() < 0.4}
+              />
+              <SidebarElement
+                avatar="?"
+                title="Joma Tech"
+                notification={Math.random() < 0.4}
+              />
+              <SidebarElement
+                avatar="?"
+                title="Sibonggyun 시봉균"
+                notification={Math.random() < 0.4}
+              />
               <SidebarElement
                 Icon={ExpandMoreOutlinedIcon}
                 title="Show 990 more"

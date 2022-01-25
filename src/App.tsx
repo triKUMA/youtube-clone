@@ -7,7 +7,7 @@ import VideoFeed from "./VideoFeed";
 
 function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [user, setUser] = useState(true);
+  const [user, setUser] = useState(false);
 
   return (
     <div className="App">
@@ -28,65 +28,6 @@ function App() {
           <VideoFeed />
         </div>
       </div>
-
-      {/* <nav>
-        <p>This is the header.</p>
-      </nav>
-      <div className="body">
-        <div className="sidebar">
-          {[...Array(15)].map((value: undefined, index: number) => (
-            <div className="sidebar-element">
-              <p>This is element {index + 1}</p>
-            </div>
-          ))}
-        </div>
-        <div className="feed">
-          <div id="#" className="topics-bar">
-            {[...Array(20)].map((value: undefined, index: number) => (
-              <div className="topic">
-                <p>Topic {index + 1}</p>
-              </div>
-            ))}
-          </div>
-          <div className="videos">
-            {[...Array(4 * 10)].map((value: undefined, index: number) => (
-              <div className="video">
-                <p className="video-thumbnail">This is video {index + 1}</p>
-                <div className="video-description">
-                  <p>Description</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div> */}
-
-      {/* <Header />
-
-      <div className="body">
-        <Sidebar />
-        <div className="body-main">
-          <Topics />
-          <p className="test">Test</p>
-          <p className="test">Test</p>
-          <p className="test">Test</p>
-          <p className="test">Test</p>
-          <p className="test">Test</p>
-          <p className="test">Test</p>
-          <p className="test">Test</p>
-          <p className="test">Test</p>
-          <p className="test">Test</p>
-          <p className="test">Test</p>
-          <p className="test">Test</p>
-          <p className="test">Test</p>
-          <p className="test">Test</p>
-          <p className="test">Test</p>
-          <p className="test">Test</p>
-          <p className="test">Test</p>
-          <p className="test">Test</p>
-          <p className="test">Test</p>
-        </div>
-      </div> */}
     </div>
   );
 }

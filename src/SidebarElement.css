@@ -9,7 +9,7 @@
 }
 
 .icon {
-  margin-inline: 0.9em;
+  margin-inline: 1em;
 }
 
 .sidebarElement > p {
@@ -67,7 +67,7 @@
 }
 
 .sidebarElement-avatar {
-  margin-inline: 1.05em;
+  margin-inline: 1.15em;
   object-fit: contain;
   width: 25px !important;
   height: 25px !important;
@@ -79,6 +79,7 @@
   width: 16px !important;
   height: 16px !important;
   margin-right: 0.7em;
+  margin-left: 0.15em;
 }
 
 .notificationIcon {
@@ -86,5 +87,6 @@
   object-fit: contain;
   width: 6px !important;
   height: 6px !important;
-  margin-right: 0.875em;
+  margin-right: 0.9em;
+  margin-left: 0.25em;
 }
