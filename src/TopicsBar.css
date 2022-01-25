@@ -1,4 +1,4 @@
-.topics-bar {
+.topicsBar {
   position: fixed;
   top: var(--header-height);
   border-top: 1px solid var(--secondary-colour);
@@ -12,9 +12,10 @@
   overflow-x: scroll;
   scrollbar-width: none;
   background-color: var(--primary-colour);
+  z-index: 1000;
 }
 
-.topics-bar::-webkit-scrollbar {
+.topicsBar::-webkit-scrollbar {
   display: none;
 }
 

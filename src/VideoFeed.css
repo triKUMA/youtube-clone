@@ -1,0 +1,32 @@
+.videoFeed {
+  margin-top: var(--header-height);
+  width: calc(100% - 3em);
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 1em;
+  padding: 1.5em;
+}
+
+@media screen and (max-width: 1950px) {
+  .videoFeed {
+    grid-template-columns: repeat(4, auto);
+  }
+}
+
+@media screen and (max-width: 1130px) {
+  .videoFeed {
+    grid-template-columns: repeat(3, auto);
+  }
+}
+
+@media screen and (max-width: 870px) {
+  .videoFeed {
+    grid-template-columns: repeat(2, auto);
+  }
+}
+
+@media screen and (max-width: 495px) {
+  .videoFeed {
+    grid-template-columns: repeat(1, auto);
+  }
+}

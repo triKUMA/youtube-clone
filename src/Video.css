@@ -1,0 +1,100 @@
+.video {
+  background: none;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 1.5em;
+}
+
+button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.video-thumbnail {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: contain;
+  background-color: black;
+  margin-bottom: 0.5em;
+}
+
+.video-details {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+}
+
+.channel-avatar {
+  width: 1.8em !important;
+  height: 1.8em !important;
+  margin-right: 0.5em;
+}
+
+.video-details-text {
+  width: 100%;
+  overflow: hidden;
+}
+
+.video-title {
+  line-height: 1.45em;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+
+.channel-name {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 0.25em;
+}
+
+.channel-name > button {
+  color: #606060;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+.channel-name > button:hover {
+  color: black;
+}
+
+.verified {
+  color: #606060;
+  padding-top: 2px;
+  width: 14px !important;
+  height: 14px !important;
+  margin-left: 0.15em;
+}
+
+.video-stats {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 300;
+  color: #606060;
+}
+
+.stats-separator {
+  width: 4px !important;
+  height: 4px !important;
+  padding-top: 2px;
+  margin-inline: 0.15em;
+}
+
+.video-menu {
+  width: 3em;
+}
+
+.video-menu > * {
+  display: none;
+}
+
+.video:hover > .video-details > .video-menu > * {
+  display: inline;
+}

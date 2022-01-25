@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./App.css";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
-import Topics from "./Topics";
+import TopicsBar from "./TopicsBar";
+import VideoFeed from "./VideoFeed";
 
 function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
@@ -23,18 +24,8 @@ function App() {
           onUserClick={() => setUser(!user)}
         />
         <div className="feed">
-          <Topics />
-          <div className="videos">
-            {[...Array(4 * 10)].map((value: undefined, index: number) => (
-              <div className="video">
-                <div className="video-thumbnail"></div>
-
-                <div className="video-description">
-                  <p>Description</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <TopicsBar />
+          <VideoFeed />
         </div>
       </div>
 

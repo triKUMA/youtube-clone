@@ -1,8 +1,8 @@
-import "./Topics.css";
+import "./TopicsBar.css";
 
-function Topics() {
+function TopicsBar() {
   return (
-    <div className="topics-bar">
+    <div className="topicsBar">
       {/* {[...Array(20)].map((value: undefined, index: number) => (
         <button className="topic">Topic {index + 1}</button>
       ))} */}
@@ -24,4 +24,4 @@ function Topics() {
   );
 }
 
-export default Topics;
+export default TopicsBar;

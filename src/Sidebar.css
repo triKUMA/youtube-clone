@@ -3,12 +3,13 @@
   top: var(--header-height);
   min-width: var(--sidebar-width);
   max-width: var(--sidebar-width);
-  height: calc(100% - var(--header-height) * 1.4);
+  height: calc(100% - var(--header-height) - 1em);
   overflow-y: auto;
   background-color: var(--primary-colour);
   scrollbar-width: thin;
   scrollbar-color: var(--primary-colour) var(--primary-colour);
-  padding-block: 0.75em;
+  padding-block: 0.5em;
+  z-index: 1000;
 }
 
 .sidebar:hover {
@@ -25,8 +26,7 @@
 .separator {
   width: 100%;
   border-top: 1px solid #e5e5e5;
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-block: 0.5em;
 }
 
 .signIn-prompt {
