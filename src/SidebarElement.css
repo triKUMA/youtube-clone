@@ -29,6 +29,10 @@
   background-color: #e0e0e0;
 }
 
+.sidebarElement.active > p {
+  font-weight: 600;
+}
+
 .sidebarElement.active:hover {
   background-color: var(--secondary-colour);
 }
@@ -74,6 +78,13 @@
   object-fit: contain;
   width: 16px !important;
   height: 16px !important;
-  justify-self: flex-end;
   margin-right: 0.5em;
+}
+
+.notificationIcon {
+  color: #065fd4;
+  object-fit: contain;
+  width: 6px !important;
+  height: 6px !important;
+  margin-right: 0.675em;
 }

@@ -169,8 +169,8 @@ function Sidebar(props: SidebarProps) {
               <SidebarElement avatar="?" title="CreepsMcPasta" isLive />
               <SidebarElement avatar="?" title="Bloomberg Quicktake" isLive />
               <SidebarElement avatar="?" title="NASA" />
-              <SidebarElement avatar="?" title="avex" isLive />
-              <SidebarElement avatar="?" title="Joma Tech" />
+              <SidebarElement avatar="?" title="avex" notification />
+              <SidebarElement avatar="?" title="Joma Tech" notification />
               <SidebarElement avatar="?" title="Sibonggyun 시봉균" />
               <SidebarElement
                 Icon={ExpandMoreOutlinedIcon}

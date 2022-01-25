@@ -50,9 +50,7 @@ function Header(props: HeaderProps) {
           <Menu Icon={MoreVertIcon} />
         )}
         {props.user ? (
-          <button className="avatar-button" onClick={props.onUserClick}>
-            <Menu avatar="?" />
-          </button>
+          <Menu avatar="?" onClick={props.onUserClick} />
         ) : (
           <button className="signIn" onClick={props.onUserClick}>
             <AccountCircleOutlinedIcon className="signIn-icon" />

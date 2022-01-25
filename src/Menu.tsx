@@ -8,14 +8,15 @@ interface MenuProps {
     muiName: string;
   };
   avatar?: string;
+  onClick?: () => void;
 }
 
-function Menu({ Icon, avatar }: MenuProps) {
+function Menu(props: MenuProps) {
   return (
     <div className="menu">
-      <button className="menu-button">
-        {(Icon && <Icon />) ||
-          (avatar && <Avatar className="avatar" src={avatar} />)}
+      <button className="menu-button" onClick={props.onClick}>
+        {(props.Icon && <props.Icon />) ||
+          (props.avatar && <Avatar className="avatar" src={props.avatar} />)}
       </button>
     </div>
   );
