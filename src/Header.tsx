@@ -13,13 +13,12 @@ import Menu from "./Menu";
 import { Avatar } from "@mui/material";
 
 interface HeaderProps {
+  user: boolean;
   onMenuClick: () => void;
   sidebarCollapsed: boolean;
 }
 
 function Header(props: HeaderProps) {
-  const user: any = false;
-
   return (
     <div className="header">
       <div className="header-left">
@@ -42,14 +41,14 @@ function Header(props: HeaderProps) {
         </button>
       </form>
       <div className="header-right">
-        {user && <Menu Icon={VideoCameraFrontOutlinedIcon} />}
+        {props.user && <Menu Icon={VideoCameraFrontOutlinedIcon} />}
         <Menu Icon={AppsIcon} />
-        {user ? (
+        {props.user ? (
           <Menu Icon={NotificationsOutlinedIcon} />
         ) : (
           <Menu Icon={MoreVertIcon} />
         )}
-        {user ? (
+        {props.user ? (
           <Menu avatar="?" />
         ) : (
           <button className="signIn">

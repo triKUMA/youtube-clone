@@ -20,10 +20,19 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import OutlinedFlagIcon from "@mui/icons-material/OutlinedFlag";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import FeedbackOutlinedIcon from "@mui/icons-material/FeedbackOutlined";
-
+import TheatersOutlinedIcon from "@mui/icons-material/TheatersOutlined";
+import SportsEsportsOutlinedIcon from "@mui/icons-material/SportsEsportsOutlined";
+import DryCleaningOutlinedIcon from "@mui/icons-material/DryCleaningOutlined";
+import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
+import EmojiEventsOutlinedIcon from "@mui/icons-material/EmojiEventsOutlined";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
+import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
+import SlideshowIcon from "@mui/icons-material/Slideshow";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
 
 interface SidebarProps {
+  user: boolean;
   collapsed: boolean;
 }
 
@@ -64,64 +73,132 @@ function Sidebar(props: SidebarProps) {
         Icon={HistoryOutlinedIcon}
         title="History"
       />
+      {!props.collapsed && props.user && (
+        <>
+          <SidebarElement Icon={SlideshowIcon} title="Your Videos" />
+          <SidebarElement Icon={AccessTimeIcon} title="Watch Later" />
+          <SidebarElement Icon={PlaylistPlayIcon} title="Custom Playlist" />
+          <SidebarElement Icon={ExpandMoreOutlinedIcon} title="Show more" />
+        </>
+      )}
 
       {!props.collapsed && (
         <>
           <div className="separator"></div>
 
-          <div className="signIn-prompt">
-            <p className="signIn-description">
-              Sign in to like videos, comment, and subscribe.
-            </p>
-            <button className="signIn sidebar-signIn">
-              <AccountCircleOutlinedIcon className="signIn-icon" />
-              <p>Sign In</p>
-            </button>
-          </div>
+          {!props.user && (
+            <>
+              <div className="signIn-prompt">
+                <p className="signIn-description">
+                  Sign in to like videos, comment, and subscribe.
+                </p>
+                <button className="signIn sidebar-signIn">
+                  <AccountCircleOutlinedIcon className="signIn-icon" />
+                  <p>Sign In</p>
+                </button>
+              </div>
 
-          <div className="separator"></div>
+              <div className="separator"></div>
+            </>
+          )}
 
-          <p className="sidebar-group-title">Best of YouTube</p>
-          <SidebarElement iconVariant Icon={MusicNoteIcon} title="Music" />
-          <SidebarElement iconVariant Icon={EmojiEventsIcon} title="Sports" />
-          <SidebarElement iconVariant Icon={SportsEsportsIcon} title="Gaming" />
-          <SidebarElement
-            iconVariant
-            Icon={TheatersIcon}
-            title={"Movies & Shows"}
-          />
-          <SidebarElement iconVariant Icon={NewspaperIcon} title="News" />
-          <SidebarElement iconVariant Icon={SensorsIcon} title="Live" />
-          <SidebarElement
-            iconVariant
-            Icon={DryCleaningIcon}
-            title={"Fashion & Beauty"}
-          />
-          <SidebarElement
-            iconVariant
-            Icon={EmojiObjectsIcon}
-            title="Learning"
-          />
-          <SidebarElement
-            iconVariant
-            youtubeVariant
-            Icon={YouTubeIcon}
-            title="Spotlight"
-          />
-          <SidebarElement iconVariant Icon={VrpanoIcon} title="360° Video" />
+          {!props.user && (
+            <>
+              <p className="sidebar-group-title">Best of YouTube</p>
+              <SidebarElement iconVariant Icon={MusicNoteIcon} title="Music" />
+              <SidebarElement
+                iconVariant
+                Icon={EmojiEventsIcon}
+                title="Sports"
+              />
+              <SidebarElement
+                iconVariant
+                Icon={SportsEsportsIcon}
+                title="Gaming"
+              />
+              <SidebarElement
+                iconVariant
+                Icon={TheatersIcon}
+                title={"Movies & Shows"}
+              />
+              <SidebarElement iconVariant Icon={NewspaperIcon} title="News" />
+              <SidebarElement iconVariant Icon={SensorsIcon} title="Live" />
+              <SidebarElement
+                iconVariant
+                Icon={DryCleaningIcon}
+                title={"Fashion & Beauty"}
+              />
+              <SidebarElement
+                iconVariant
+                Icon={EmojiObjectsIcon}
+                title="Learning"
+              />
+              <SidebarElement
+                iconVariant
+                redVariant
+                Icon={YouTubeIcon}
+                title="Spotlight"
+              />
+              <SidebarElement
+                iconVariant
+                Icon={VrpanoIcon}
+                title="360° Video"
+              />
 
-          <div className="separator"></div>
+              <div className="separator"></div>
+            </>
+          )}
 
-          <SidebarElement
-            Icon={AddCircleOutlineOutlinedIcon}
-            title="Browse channels"
-          />
+          {!props.user ? (
+            <>
+              <SidebarElement
+                Icon={AddCircleOutlineOutlinedIcon}
+                title="Browse channels"
+              />
 
-          <div className="separator"></div>
+              <div className="separator"></div>
+            </>
+          ) : (
+            <>
+              <p className="sidebar-group-title">Subscriptions</p>
+              <SidebarElement avatar="?" title="ABC News (Australia)" isLive />
+              <SidebarElement avatar="?" title="CreepsMcPasta" isLive />
+              <SidebarElement avatar="?" title="Bloomberg Quicktake" isLive />
+              <SidebarElement avatar="?" title="NASA" />
+              <SidebarElement avatar="?" title="avex" isLive />
+              <SidebarElement avatar="?" title="Joma Tech" />
+              <SidebarElement avatar="?" title="Sibonggyun 시봉균" />
+              <SidebarElement
+                Icon={ExpandMoreOutlinedIcon}
+                title="Show 990 more"
+              />
+
+              <div className="separator"></div>
+            </>
+          )}
 
           <p className="sidebar-group-title">More from YouTube</p>
           <SidebarElement Icon={YouTubeIcon} title="YouTube Premium" />
+          {props.user && (
+            <>
+              <SidebarElement
+                Icon={TheatersOutlinedIcon}
+                title={"Movies & Shows"}
+              />
+              <SidebarElement Icon={SportsEsportsOutlinedIcon} title="Gaming" />
+            </>
+          )}
           <SidebarElement Icon={SensorsIcon} title="Live" />
+          {props.user && (
+            <>
+              <SidebarElement
+                Icon={DryCleaningOutlinedIcon}
+                title={"Fashion & Beauty"}
+              />
+              <SidebarElement Icon={LightbulbOutlinedIcon} title="Learning" />
+              <SidebarElement Icon={EmojiEventsOutlinedIcon} title="Sport" />
+            </>
+          )}
 
           <div className="separator"></div>
 

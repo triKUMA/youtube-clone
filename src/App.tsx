@@ -6,15 +6,17 @@ import Topics from "./Topics";
 
 function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const [user, setUser] = useState(true);
 
   return (
     <div className="App">
       <Header
+        user={user}
         sidebarCollapsed={sidebarCollapsed}
         onMenuClick={() => setSidebarCollapsed(!sidebarCollapsed)}
       />
       <div className="body">
-        <Sidebar collapsed={sidebarCollapsed} />
+        <Sidebar user={user} collapsed={sidebarCollapsed} />
         <div className="feed">
           <Topics />
           <div className="videos">

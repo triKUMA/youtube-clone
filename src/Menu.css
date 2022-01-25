@@ -7,6 +7,8 @@
 }
 
 .avatar {
-  width: 1.5em !important;
-  height: 1.5em !important;
+  width: 1.6em !important;
+  height: 1.6em !important;
+  margin-left: 0.35em;
+  margin-right: 0.5em;
 }
