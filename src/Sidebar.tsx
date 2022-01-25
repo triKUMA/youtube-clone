@@ -23,98 +23,142 @@ import FeedbackOutlinedIcon from "@mui/icons-material/FeedbackOutlined";
 
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 
-function Sidebar() {
+interface SidebarProps {
+  collapsed: boolean;
+}
+
+function Sidebar(props: SidebarProps) {
+  document.documentElement.style.setProperty(
+    "--sidebar-width",
+    !props.collapsed ? "15em" : "4.5em"
+  );
+
   return (
     <div className="sidebar">
-      <SidebarElement active Icon={HomeIcon} title="Home" />
-      <SidebarElement Icon={ExploreOutlinedIcon} title="Explore" />
-      <SidebarElement Icon={SubscriptionsOutlinedIcon} title="Subscriptions" />
-
-      <div className="separator"></div>
-
-      <SidebarElement Icon={VideoLibraryOutlinedIcon} title="Library" />
-      <SidebarElement Icon={HistoryOutlinedIcon} title="History" />
-
-      <div className="separator"></div>
-
-      <div className="signIn-prompt">
-        <p className="signIn-description">
-          Sign in to like videos, comment, and subscribe.
-        </p>
-        <button className="signIn sidebar-signIn">
-          <AccountCircleOutlinedIcon className="signIn-icon" />
-          <p>Sign In</p>
-        </button>
-      </div>
-
-      <div className="separator"></div>
-
-      <p className="sidebar-group-title">Best of YouTube</p>
-      <SidebarElement iconVariant Icon={MusicNoteIcon} title="Music" />
-      <SidebarElement iconVariant Icon={EmojiEventsIcon} title="Sports" />
-      <SidebarElement iconVariant Icon={SportsEsportsIcon} title="Gaming" />
       <SidebarElement
-        iconVariant
-        Icon={TheatersIcon}
-        title={"Movies & Shows"}
+        collapse={props.collapsed}
+        active
+        Icon={HomeIcon}
+        title="Home"
       />
-      <SidebarElement iconVariant Icon={NewspaperIcon} title="News" />
-      <SidebarElement iconVariant Icon={SensorsIcon} title="Live" />
       <SidebarElement
-        iconVariant
-        Icon={DryCleaningIcon}
-        title={"Fashion & Beauty"}
+        collapse={props.collapsed}
+        Icon={ExploreOutlinedIcon}
+        title="Explore"
       />
-      <SidebarElement iconVariant Icon={EmojiObjectsIcon} title="Learning" />
       <SidebarElement
-        iconVariant
-        youtubeVariant
-        Icon={YouTubeIcon}
-        title="Spotlight"
-      />
-      <SidebarElement iconVariant Icon={VrpanoIcon} title="360° Video" />
-
-      <div className="separator"></div>
-
-      <SidebarElement
-        Icon={AddCircleOutlineOutlinedIcon}
-        title="Browse channels"
+        collapse={props.collapsed}
+        Icon={SubscriptionsOutlinedIcon}
+        title="Subscriptions"
       />
 
-      <div className="separator"></div>
+      {!props.collapsed && <div className="separator"></div>}
 
-      <p className="sidebar-group-title">More from YouTube</p>
-      <SidebarElement Icon={YouTubeIcon} title="YouTube Premium" />
-      <SidebarElement Icon={SensorsIcon} title="Live" />
+      <SidebarElement
+        collapse={props.collapsed}
+        Icon={VideoLibraryOutlinedIcon}
+        title="Library"
+      />
+      <SidebarElement
+        collapse={props.collapsed}
+        Icon={HistoryOutlinedIcon}
+        title="History"
+      />
 
-      <div className="separator"></div>
+      {!props.collapsed && (
+        <>
+          <div className="separator"></div>
 
-      <SidebarElement Icon={SettingsOutlinedIcon} title="Settings" />
-      <SidebarElement Icon={OutlinedFlagIcon} title="Report history" />
-      <SidebarElement Icon={HelpOutlineOutlinedIcon} title="Help" />
-      <SidebarElement Icon={FeedbackOutlinedIcon} title="Send feedback" />
+          <div className="signIn-prompt">
+            <p className="signIn-description">
+              Sign in to like videos, comment, and subscribe.
+            </p>
+            <button className="signIn sidebar-signIn">
+              <AccountCircleOutlinedIcon className="signIn-icon" />
+              <p>Sign In</p>
+            </button>
+          </div>
 
-      <div className="separator"></div>
+          <div className="separator"></div>
 
-      <div className="sidebar-footer">
-        <div className="sidebar-footer-group">
-          <button className="sidebar-footer-entry">About</button>
-          <button className="sidebar-footer-entry">Press</button>
-          <button className="sidebar-footer-entry">Copyright</button>
-          <button className="sidebar-footer-entry">Contact us</button>
-          <button className="sidebar-footer-entry">Creators</button>
-          <button className="sidebar-footer-entry">Advertise</button>
-          <button className="sidebar-footer-entry">Developers</button>
-        </div>
-        <div className="sidebar-footer-group">
-          <button className="sidebar-footer-entry">Terms</button>
-          <button className="sidebar-footer-entry">Privacy</button>
-          <button className="sidebar-footer-entry">{"Policy & Safety"}</button>
-          <button className="sidebar-footer-entry">How YouTube works</button>
-          <button className="sidebar-footer-entry">Test new features</button>
-        </div>
-        <p className="trademark">© 2022 Google LLC</p>
-      </div>
+          <p className="sidebar-group-title">Best of YouTube</p>
+          <SidebarElement iconVariant Icon={MusicNoteIcon} title="Music" />
+          <SidebarElement iconVariant Icon={EmojiEventsIcon} title="Sports" />
+          <SidebarElement iconVariant Icon={SportsEsportsIcon} title="Gaming" />
+          <SidebarElement
+            iconVariant
+            Icon={TheatersIcon}
+            title={"Movies & Shows"}
+          />
+          <SidebarElement iconVariant Icon={NewspaperIcon} title="News" />
+          <SidebarElement iconVariant Icon={SensorsIcon} title="Live" />
+          <SidebarElement
+            iconVariant
+            Icon={DryCleaningIcon}
+            title={"Fashion & Beauty"}
+          />
+          <SidebarElement
+            iconVariant
+            Icon={EmojiObjectsIcon}
+            title="Learning"
+          />
+          <SidebarElement
+            iconVariant
+            youtubeVariant
+            Icon={YouTubeIcon}
+            title="Spotlight"
+          />
+          <SidebarElement iconVariant Icon={VrpanoIcon} title="360° Video" />
+
+          <div className="separator"></div>
+
+          <SidebarElement
+            Icon={AddCircleOutlineOutlinedIcon}
+            title="Browse channels"
+          />
+
+          <div className="separator"></div>
+
+          <p className="sidebar-group-title">More from YouTube</p>
+          <SidebarElement Icon={YouTubeIcon} title="YouTube Premium" />
+          <SidebarElement Icon={SensorsIcon} title="Live" />
+
+          <div className="separator"></div>
+
+          <SidebarElement Icon={SettingsOutlinedIcon} title="Settings" />
+          <SidebarElement Icon={OutlinedFlagIcon} title="Report history" />
+          <SidebarElement Icon={HelpOutlineOutlinedIcon} title="Help" />
+          <SidebarElement Icon={FeedbackOutlinedIcon} title="Send feedback" />
+
+          <div className="separator"></div>
+
+          <div className="sidebar-footer">
+            <div className="sidebar-footer-group">
+              <button className="sidebar-footer-entry">About</button>
+              <button className="sidebar-footer-entry">Press</button>
+              <button className="sidebar-footer-entry">Copyright</button>
+              <button className="sidebar-footer-entry">Contact us</button>
+              <button className="sidebar-footer-entry">Creators</button>
+              <button className="sidebar-footer-entry">Advertise</button>
+              <button className="sidebar-footer-entry">Developers</button>
+            </div>
+            <div className="sidebar-footer-group">
+              <button className="sidebar-footer-entry">Terms</button>
+              <button className="sidebar-footer-entry">Privacy</button>
+              <button className="sidebar-footer-entry">
+                {"Policy & Safety"}
+              </button>
+              <button className="sidebar-footer-entry">
+                How YouTube works
+              </button>
+              <button className="sidebar-footer-entry">
+                Test new features
+              </button>
+            </div>
+            <p className="trademark">© 2022 Google LLC</p>
+          </div>
+        </>
+      )}
     </div>
   );
 }

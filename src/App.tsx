@@ -1,15 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Header from "./Header";
 import Sidebar from "./Sidebar";
 import Topics from "./Topics";
 
 function App() {
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
   return (
     <div className="App">
-      <Header />
+      <Header
+        sidebarCollapsed={sidebarCollapsed}
+        onMenuClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+      />
       <div className="body">
-        <Sidebar />
+        <Sidebar collapsed={sidebarCollapsed} />
         <div className="feed">
           <Topics />
           <div className="videos">

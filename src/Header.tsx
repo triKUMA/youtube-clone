@@ -12,13 +12,18 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Menu from "./Menu";
 import { Avatar } from "@mui/material";
 
-function Header() {
+interface HeaderProps {
+  onMenuClick: () => void;
+  sidebarCollapsed: boolean;
+}
+
+function Header(props: HeaderProps) {
   const user: any = false;
 
   return (
     <div className="header">
       <div className="header-left">
-        <button className="header-menu">
+        <button className="header-menu" onClick={props.onMenuClick}>
           <MenuIcon className="header-menuIcon" />
         </button>
         <button className="header-logo">

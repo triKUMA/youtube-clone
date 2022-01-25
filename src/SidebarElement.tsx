@@ -5,6 +5,7 @@ import "./SidebarElement.css";
 
 interface SidebarElementProps {
   active?: boolean;
+  collapse?: boolean;
   Icon: OverridableComponent<SvgIconTypeMap<{}, "svg">> & {
     muiName: string;
   };
@@ -13,25 +14,25 @@ interface SidebarElementProps {
   title: string;
 }
 
-function SidebarElement({
-  active,
-  Icon,
-  iconVariant,
-  youtubeVariant,
-  title,
-}: SidebarElementProps) {
+function SidebarElement(props: SidebarElementProps) {
   return (
-    <button className={active ? "sidebarElement active" : "sidebarElement"}>
+    <button
+      className={
+        "sidebarElement" +
+        (props.active ? " active" : "") +
+        (props.collapse ? " collapse" : "")
+      }
+    >
       {
-        <Icon
+        <props.Icon
           className={
             "icon" +
-            (iconVariant ? " rounded" : "") +
-            (youtubeVariant ? " red" : "")
+            (props.iconVariant ? " rounded" : "") +
+            (props.youtubeVariant ? " red" : "")
           }
         />
       }
-      <p>{title}</p>
+      <p>{props.title}</p>
     </button>
   );
 }

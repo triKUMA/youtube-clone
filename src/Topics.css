@@ -1,5 +1,6 @@
 .topics-bar {
   position: fixed;
+  top: var(--header-height);
   border-top: 1px solid var(--secondary-colour);
   border-bottom: 1px solid var(--secondary-colour);
   height: 3.5em;

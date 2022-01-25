@@ -28,11 +28,22 @@
   background-color: var(--secondary-colour);
 }
 
+.collapse.sidebarElement {
+  flex-direction: column;
+  justify-content: center;
+  height: 5.5em;
+}
+
+.collapse.sidebarElement > p {
+  font-size: 10px;
+  margin-top: 0.5em;
+}
+
 .rounded.icon {
   object-fit: contain;
   width: 16px !important;
   height: 16px !important;
-  padding: 0.15em 0.15em 0.17em 0.182em;
+  padding: 0.15em;
 }
 
 .rounded {
