@@ -16,6 +16,7 @@ interface HeaderProps {
   user: boolean;
   onMenuClick: () => void;
   sidebarCollapsed: boolean;
+  onUserClick: () => void;
 }
 
 function Header(props: HeaderProps) {
@@ -49,9 +50,11 @@ function Header(props: HeaderProps) {
           <Menu Icon={MoreVertIcon} />
         )}
         {props.user ? (
-          <Menu avatar="?" />
+          <button className="avatar-button" onClick={props.onUserClick}>
+            <Menu avatar="?" />
+          </button>
         ) : (
-          <button className="signIn">
+          <button className="signIn" onClick={props.onUserClick}>
             <AccountCircleOutlinedIcon className="signIn-icon" />
             <p>Sign In</p>
           </button>

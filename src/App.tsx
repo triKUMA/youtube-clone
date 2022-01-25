@@ -14,9 +14,14 @@ function App() {
         user={user}
         sidebarCollapsed={sidebarCollapsed}
         onMenuClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+        onUserClick={() => setUser(!user)}
       />
       <div className="body">
-        <Sidebar user={user} collapsed={sidebarCollapsed} />
+        <Sidebar
+          user={user}
+          collapsed={sidebarCollapsed}
+          onUserClick={() => setUser(!user)}
+        />
         <div className="feed">
           <Topics />
           <div className="videos">

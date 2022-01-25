@@ -34,6 +34,7 @@ import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
 interface SidebarProps {
   user: boolean;
   collapsed: boolean;
+  onUserClick: () => void;
 }
 
 function Sidebar(props: SidebarProps) {
@@ -92,7 +93,10 @@ function Sidebar(props: SidebarProps) {
                 <p className="signIn-description">
                   Sign in to like videos, comment, and subscribe.
                 </p>
-                <button className="signIn sidebar-signIn">
+                <button
+                  className="signIn sidebar-signIn"
+                  onClick={props.onUserClick}
+                >
                   <AccountCircleOutlinedIcon className="signIn-icon" />
                   <p>Sign In</p>
                 </button>

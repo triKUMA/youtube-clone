@@ -131,6 +131,12 @@
   margin-left: 1em;
 }
 
+.avatar-button {
+  background: none;
+  border: none;
+  outline: none;
+}
+
 .signIn {
   display: flex;
   padding: 0.55em 0.8em;
