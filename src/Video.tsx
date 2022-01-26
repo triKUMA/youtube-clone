@@ -25,26 +25,27 @@ function Video(props: VideoProps) {
           className="video-thumbnail"
           src={props.thumbnail ? props.thumbnail : vidPlaceholder}
         />
-      </button>
-      <button className="video-details">
-        <button>
-          <Avatar className="channel-avatar" src={props.channel.profileUrl} />
-        </button>
-        <div className="video-details-text">
-          <p className="video-title">{props.title}</p>
-          <div className="channel-name">
-            <button>{props.channel.name}</button>
-            {props.verified && <CheckCircleIcon className="verified" />}
-          </div>
+        <p className="video-length">2:49</p>
+        <div className="video-details">
+          <button>
+            <Avatar className="channel-avatar" src={props.channel.profileUrl} />
+          </button>
+          <div className="video-details-text">
+            <p className="video-title">{props.title}</p>
+            <div className="channel-name">
+              <button>{props.channel.name}</button>
+              {props.verified && <CheckCircleIcon className="verified" />}
+            </div>
 
-          <div className="video-stats">
-            <p className="video-views">442K views</p>
-            <FiberManualRecordIcon className="stats-separator" />
-            <p className="video-age">6 days ago</p>
+            <div className="video-stats">
+              <p className="video-views">442K views</p>
+              <FiberManualRecordIcon className="stats-separator" />
+              <p className="video-age">6 days ago</p>
+            </div>
           </div>
-        </div>
-        <div className="video-menu">
-          <Menu Icon={MoreVertIcon} />
+          <div className="video-menu">
+            <Menu Icon={MoreVertIcon} />
+          </div>
         </div>
       </button>
     </div>

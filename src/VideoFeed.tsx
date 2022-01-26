@@ -6,6 +6,36 @@ import VideoGroup from "./VideoGroup";
 import Channel from "./Channel";
 
 function VideoFeed() {
+  const [videoColumns, setVideoColumns] = useState(getVideoColumnsAmt());
+
+  function getVideoColumnsAmt(): number {
+    let columnsAmt = 5;
+    if (window.innerWidth <= 495) {
+      columnsAmt = 1;
+    } else if (window.innerWidth <= 870) {
+      columnsAmt = 2;
+    } else if (window.innerWidth <= 1130) {
+      columnsAmt = 3;
+    } else if (window.innerWidth <= 1950) {
+      columnsAmt = 4;
+    }
+
+    document.documentElement.style.setProperty(
+      "--video-columns",
+      columnsAmt.toString()
+    );
+
+    return columnsAmt;
+  }
+
+  // useEffect(() => {
+  //   setVideoColumns(getVideoColumnsAmt());
+  // }, [window.innerWidth]);
+
+  window.addEventListener("resize", () => {
+    setVideoColumns(getVideoColumnsAmt());
+  });
+
   const thumbnails: string[] = [
     "https://i.ytimg.com/vi/nj3ZeKkQ49w/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBmAl5qWZh8yg2DtZlzpBRGA4WhuQ",
     "https://i.ytimg.com/vi/iu3tThEql7U/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDFR6_SYc9WHNzdJuYB5by9TWDW4Q",
@@ -116,38 +146,6 @@ function VideoFeed() {
   function getRand<T>(input: T[]): T {
     return input[Math.floor(Math.random() * input.length)];
   }
-
-  const [videoColumns, setVideoColumns] = useState(getVideoColumnsAmt());
-
-  function getVideoColumnsAmt(): number {
-    let columnsAmt = 0;
-    if (window.innerWidth <= 495) {
-      columnsAmt = 1;
-    } else if (window.innerWidth <= 870) {
-      columnsAmt = 2;
-    } else if (window.innerWidth <= 1130) {
-      columnsAmt = 3;
-    } else if (window.innerWidth <= 1950) {
-      columnsAmt = 4;
-    } else {
-      columnsAmt = 5;
-    }
-
-    document.documentElement.style.setProperty(
-      "--video-columns",
-      columnsAmt.toString()
-    );
-
-    return columnsAmt;
-  }
-
-  // useEffect(() => {
-  //   setVideoColumns(getVideoColumnsAmt());
-  // }, [window.innerWidth]);
-
-  window.addEventListener("resize", () => {
-    setVideoColumns(getVideoColumnsAmt());
-  });
 
   return (
     <div className="videoFeed">

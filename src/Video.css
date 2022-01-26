@@ -3,6 +3,8 @@
   width: 100%;
   overflow: hidden;
   margin-bottom: 1.5em;
+  /* display: flex;
+  flex-direction: column; */
 }
 
 button {
@@ -19,6 +21,23 @@ button {
   object-fit: contain;
   background-color: black;
   margin-bottom: 0.5em;
+}
+
+.video-length {
+  align-self: flex-end;
+  float: right;
+  position: relative;
+  top: -2.5em;
+  left: -0.35em;
+  background-color: black;
+  color: white;
+  opacity: 0.8;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.085em 0.35em 0.15em 0.35em;
+  border-radius: 2px;
+  font-size: 12px;
+  margin-bottom: -1em;
 }
 
 .video-details {
