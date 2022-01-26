@@ -168,6 +168,8 @@
 
   .header-search-voice {
     background: none;
+    min-width: 3em;
+    max-width: 3em;
     padding-right: 0;
   }
 
@@ -175,7 +177,12 @@
     background: none;
     border: none;
     justify-content: flex-end;
-    width: 3em;
+    min-width: 3em;
+    max-width: 3em;
+  }
+
+  .header-search-submit:hover {
+    background: none;
   }
 
   .header-search {

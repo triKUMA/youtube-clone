@@ -63,6 +63,8 @@ button {
   color: #606060;
   font-size: 12px;
   font-weight: 300;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .channel-name > button:hover {
@@ -83,6 +85,8 @@ button {
   font-size: 12px;
   font-weight: 300;
   color: #606060;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .stats-separator {
@@ -90,6 +94,16 @@ button {
   height: 4px !important;
   padding-top: 2px;
   margin-inline: 0.15em;
+}
+
+.video-views {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.video-age {
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .video-menu {
