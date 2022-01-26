@@ -21,6 +21,12 @@ function VideoFeed() {
     "https://i.ytimg.com/vi/xqi-9zXx03Q/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDo9t4CuqlNKrAaVy6ZgAC0r5DdXQ",
     "https://i.ytimg.com/vi/otIAxfJ0UTc/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCQjme6COOfrRTDB4H4OqbjIsx90g",
     "https://i.ytimg.com/vi/ozdmU2g_ui4/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAx_AWLIvcLvwCx7zg7Q2pLH4_vqw",
+    "https://i.ytimg.com/vi/drVQdw6oQ6U/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC4tAtWsDw8oH49VC7PP7y6UgOYQw",
+    "https://i.ytimg.com/vi/ooqdg9Wr-mo/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBEfvQsokLE9P7OaDJ4C4IFTU7d1g",
+    "https://i.ytimg.com/vi/RvMt-sShni0/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBxnV7PQlYsnzBy1GqFzkWol1RvVQ",
+    "https://i.ytimg.com/vi/9esCA8_EPeY/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCOLZY3m5II2crMbMH_0y61X8nY9w",
+    "https://i.ytimg.com/vi/eVUVTV-ez74/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBPIN6sR81nbG-8iqmCPsNlWu1x9Q",
+    "https://i.ytimg.com/vi/SAK117AmzSE/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAzA7o1ikGi_yDlaimIxpWRMlkVNA",
   ];
 
   const titles: string[] = [
@@ -32,6 +38,12 @@ function VideoFeed() {
     "Victoria Police officer charged with assault | 9 News Australia",
     "Steph Curry, Kevin Durant Play Epic Game of P-I-G",
     "Penny's Best Moments! | The Big Bang Theory",
+    "We Don't Talk About Apple Bottom Jeans",
+    "World's Most Expensive Food!",
+    "Best UFC Knockouts of 2021",
+    "Iron Man Takes Spider-Man's Suit Scene - Spider-Man: Homecoming (2017) Movie CLIP HD",
+    "Top 20 NEW Open World Games of 2022",
+    "Can Otters See Optical Illusions? | Indoor Sinkhole",
   ];
 
   const channels: Channel[] = [
@@ -74,6 +86,36 @@ function VideoFeed() {
       name: "Warner Bros. TV",
       profileUrl:
         "https://yt3.ggpht.com/ytc/AKedOLQyODnahEQYdeI4RIho-O6sjfOALCw_MHAWa5dbfQ=s68-c-k-c0x00ffffff-no-rj",
+    },
+    {
+      name: "Sawtooth Memes",
+      profileUrl:
+        "https://yt3.ggpht.com/9tpb-_WmbWPyOO5WdJ2ZPegQpJEm_nhtBItOhW8HneZ5qSFYJT5eG_6_GBPx4OjMk33dhC-uO4Y=s68-c-k-c0x00ffffff-no-rj",
+    },
+    {
+      name: "Beast Reacts",
+      profileUrl:
+        "https://yt3.ggpht.com/ytc/AKedOLREDyzQ-3o32vvhe7W0Iq2miFl7FOpLYIKHKq9_8A=s68-c-k-c0x00ffffff-no-rj",
+    },
+    {
+      name: "BoxingvideoZ",
+      profileUrl:
+        "https://yt3.ggpht.com/Qiy476WIAHgd7w_XyjvvNNjlnk14lh1_lnePJhPTVN7vr9UfLUIkQSbuGe0bC5TSozPBIzaFEg=s68-c-k-c0x00ffffff-no-rj",
+    },
+    {
+      name: "TopMovieClips",
+      profileUrl:
+        "https://yt3.ggpht.com/ytc/AKedOLSsdk9Oc0v0rq7nrprpm5xNsto2iMx7G-J-ducejA=s68-c-k-c0x00ffffff-no-rj",
+    },
+    {
+      name: "gameranx",
+      profileUrl:
+        "https://yt3.ggpht.com/ytc/AKedOLRjW77DzAQyGuXfC6Rgd2gh1zfckc5uJzKT_-fK=s68-c-k-c0x00ffffff-no-rj",
+    },
+    {
+      name: "KOTSUMET",
+      profileUrl:
+        "https://yt3.ggpht.com/ytc/AKedOLS7vuZ0iVKmDuo_azmnI3TfI4uxO54axiX0_vsycw=s68-c-k-c0x00ffffff-no-rj",
     },
   ];
 
