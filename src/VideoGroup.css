@@ -16,3 +16,15 @@
   grid-template-columns: repeat(var(--video-columns), auto);
   gap: 1em;
 }
+
+.expand {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.75em;
+  padding-bottom: 0.5em;
+}
+
+.expand:hover {
+  background-color: #ececec;
+}

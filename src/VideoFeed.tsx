@@ -6,12 +6,6 @@ import VideoGroup from "./VideoGroup";
 import Channel from "./Channel";
 
 function VideoFeed() {
-  const [videoColumns, setVideoColumns] = useState(getVideoColumnsAmt());
-
-  function getRand<T>(input: T[]): T {
-    return input[Math.floor(Math.random() * input.length)];
-  }
-
   const thumbnails: string[] = [
     "https://i.ytimg.com/vi/nj3ZeKkQ49w/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBmAl5qWZh8yg2DtZlzpBRGA4WhuQ",
     "https://i.ytimg.com/vi/iu3tThEql7U/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDFR6_SYc9WHNzdJuYB5by9TWDW4Q",
@@ -119,6 +113,12 @@ function VideoFeed() {
     },
   ];
 
+  function getRand<T>(input: T[]): T {
+    return input[Math.floor(Math.random() * input.length)];
+  }
+
+  const [videoColumns, setVideoColumns] = useState(getVideoColumnsAmt());
+
   function getVideoColumnsAmt(): number {
     let columnsAmt = 0;
     if (window.innerWidth <= 495) {
@@ -141,6 +141,10 @@ function VideoFeed() {
     return columnsAmt;
   }
 
+  // useEffect(() => {
+  //   setVideoColumns(getVideoColumnsAmt());
+  // }, [window.innerWidth]);
+
   window.addEventListener("resize", () => {
     setVideoColumns(getVideoColumnsAmt());
   });
@@ -157,8 +161,8 @@ function VideoFeed() {
           />
         ))}
       </VideoGroup>
-      <VideoGroup title="Trending">
-        {[...Array(1 * videoColumns)].map((value: undefined, index: number) => (
+      <VideoGroup title="Trending" initial={[1, videoColumns]}>
+        {[...Array(3 * videoColumns)].map((value: undefined, index: number) => (
           <Video
             thumbnail={getRand(thumbnails)}
             title={getRand(titles)}
@@ -177,7 +181,7 @@ function VideoFeed() {
           />
         ))}
       </VideoGroup>
-      <VideoGroup title="COVID-19 news">
+      <VideoGroup title="COVID-19 news" initial={[1, videoColumns]}>
         {[...Array(1 * videoColumns)].map((value: undefined, index: number) => (
           <Video
             thumbnail={getRand(thumbnails)}

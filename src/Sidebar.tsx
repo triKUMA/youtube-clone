@@ -26,7 +26,7 @@ import DryCleaningOutlinedIcon from "@mui/icons-material/DryCleaningOutlined";
 import LightbulbOutlinedIcon from "@mui/icons-material/LightbulbOutlined";
 import EmojiEventsOutlinedIcon from "@mui/icons-material/EmojiEventsOutlined";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
-import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SlideshowIcon from "@mui/icons-material/Slideshow";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
@@ -79,7 +79,7 @@ function Sidebar(props: SidebarProps) {
           <SidebarElement Icon={SlideshowIcon} title="Your Videos" />
           <SidebarElement Icon={AccessTimeIcon} title="Watch Later" />
           <SidebarElement Icon={PlaylistPlayIcon} title="Custom Playlist" />
-          <SidebarElement Icon={ExpandMoreOutlinedIcon} title="Show more" />
+          <SidebarElement Icon={ExpandMoreIcon} title="Show more" />
         </>
       )}
 
@@ -193,10 +193,7 @@ function Sidebar(props: SidebarProps) {
                 title="Sibonggyun 시봉균"
                 notification={Math.random() < 0.4}
               />
-              <SidebarElement
-                Icon={ExpandMoreOutlinedIcon}
-                title="Show 990 more"
-              />
+              <SidebarElement Icon={ExpandMoreIcon} title="Show 990 more" />
 
               <div className="separator"></div>
             </>
