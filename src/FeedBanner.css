@@ -1,3 +1,14 @@
+.closedBanner {
+  width: 100%;
+  margin-bottom: 3.5em;
+  margin-top: 1.5em;
+  padding-block: 0.75em;
+  color: #606060;
+  font-size: 12px;
+  text-align: center;
+  border-block: 4px solid var(--secondary-colour);
+}
+
 .feedBanner {
   width: 100%;
   display: flex;
