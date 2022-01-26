@@ -1,3 +1,4 @@
+import React from "react";
 import "./VideoGroup.css";
 
 interface VideoGroupProps {
@@ -7,8 +8,9 @@ interface VideoGroupProps {
 
 function VideoGroup(props: VideoGroupProps) {
   return (
-    <div className={"videoGroup" + (props.title ? " titled" : "")}>
-      {props.children}
+    <div className={props.title ? "titled" : ""}>
+      {props.title && <p className="title">{props.title}</p>}
+      <div className="videoGroup">{props.children}</div>
     </div>
   );
 }

@@ -1,3 +1,16 @@
+.titled {
+  border-block: 4px solid var(--secondary-colour);
+  padding-top: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 2.5em;
+}
+
+.titled > .title {
+  font-size: 20px;
+  margin-left: 0.5em;
+  margin-bottom: 1.25em;
+}
+
 .videoGroup {
   display: grid;
   grid-template-columns: repeat(var(--video-colums), auto);
