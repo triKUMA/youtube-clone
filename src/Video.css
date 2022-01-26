@@ -40,10 +40,15 @@ button {
 
 .video-title {
   line-height: 1.45em;
+  max-height: 2.9em;
   text-align: left;
   font-size: 14px;
   font-weight: 500;
   margin-bottom: 0.5em;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 .channel-name {
