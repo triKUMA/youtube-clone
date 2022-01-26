@@ -1,0 +1,5 @@
+.videoGroup {
+  display: grid;
+  grid-template-columns: repeat(var(--video-colums), auto);
+  gap: 1em;
+}

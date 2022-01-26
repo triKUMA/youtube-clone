@@ -1,6 +1,8 @@
 import { useEffect } from "react";
+import FeedBanner from "./FeedBanner";
 import Video from "./Video";
 import "./VideoFeed.css";
+import VideoGroup from "./VideoGroup";
 
 function VideoFeed() {
   let videoColumns: number;
@@ -35,11 +37,48 @@ function VideoFeed() {
 
   return (
     <div className="videoFeed">
-      {[...Array(4 * 10)].map((value: undefined, index: number) => (
-        <Video
-          title="This is a placeholder video title. It will clip itself when too long. I dont know if this approach is very stable, however."
-          verified={Math.random() < 0.4}
-        />
+      {[...Array(3)].map((value: undefined, index: number) => (
+        <VideoGroup>
+          {[...Array(4)].map((value: undefined, index: number) => (
+            <Video
+              title="This is a placeholder video title. It will clip itself when too long. I dont know if this approach is very stable, though."
+              verified={Math.random() < 0.4}
+            />
+          ))}
+        </VideoGroup>
+      ))}
+      <FeedBanner
+        imgSrc="https://www.gstatic.com/youtube/img/promos/growth/24130705fcdd89c3d8453b2253b97e4ec8ee91660021ac874249f99ab7e2f015_480x270.png"
+        title="Trending this month: Creators you can't miss"
+        desc="Check out up-and-coming creators in our new monthly playlist"
+        cta="Explore Now"
+        darkVariant
+      />
+      {[...Array(2)].map((value: undefined, index: number) => (
+        <VideoGroup>
+          {[...Array(4)].map((value: undefined, index: number) => (
+            <Video
+              title="This is a placeholder video title. It will clip itself when too long. I dont know if this approach is very stable, though."
+              verified={Math.random() < 0.4}
+            />
+          ))}
+        </VideoGroup>
+      ))}
+      <FeedBanner
+        imgSrc="https://www.gstatic.com/youtube/img/promos/growth/de0fdfa3872e7bcb579ee98472aa76e8166046950ef7c0d7887a7de7534949ba_480x270.png"
+        title="Making YouTube Safer"
+        desc="We are committed to creating a responsible platform. Our products and policies help protect our community from harmful content."
+        cta="Learn More"
+      />
+      {[...Array(6)].map((value: undefined, index: number) => (
+        <VideoGroup>
+          {[...Array(4)].map((value: undefined, index: number) => (
+            <Video
+              title="This is a placeholder video title. It will clip itself when too long. I dont know if this approach is very stable, though."
+              verified={Math.random() < 0.4}
+            />
+          ))}
+        </VideoGroup>
       ))}
     </div>
   );
