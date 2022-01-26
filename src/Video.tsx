@@ -5,10 +5,12 @@ import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import Menu from "./Menu";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import Channel from "./Channel";
 
 interface VideoProps {
   thumbnail?: string;
   title: string;
+  channel: Channel;
   verified?: boolean;
 }
 
@@ -26,12 +28,12 @@ function Video(props: VideoProps) {
       </button>
       <button className="video-details">
         <button>
-          <Avatar className="channel-avatar" src="?" />
+          <Avatar className="channel-avatar" src={props.channel.profileUrl} />
         </button>
         <div className="video-details-text">
           <p className="video-title">{props.title}</p>
           <div className="channel-name">
-            <button>channel_name</button>
+            <button>{props.channel.name}</button>
             {props.verified && <CheckCircleIcon className="verified" />}
           </div>
 
