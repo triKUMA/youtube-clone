@@ -83,8 +83,9 @@
 
 .header-search > input {
   flex: 1;
-  padding: 0.75em;
+  z-index: 1;
   outline: none;
+  padding: 0.75em;
   border: 1px solid var(--secondary-colour);
   background: none;
   border-top-left-radius: 2px;
@@ -93,6 +94,10 @@
   font-size: 1em;
   letter-spacing: 0.5px;
   min-width: 0;
+}
+
+.header-search > input:focus-within {
+  border: 1px solid var(--signin-colour);
 }
 
 .header-search-submit {
