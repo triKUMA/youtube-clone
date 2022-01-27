@@ -44,14 +44,25 @@ function Video({ metadata }: VideoProps) {
     const isOverHour = length.getHours() > 0;
     return (
       (isOverHour ? length.getHours() + ":" : "") +
-      length.getMinutes() +
+      ((length.getMinutes() < 10 && isOverHour ? "0" : "") +
+        length.getMinutes()) +
       ":" +
-      length.getSeconds()
+      ((length.getSeconds() < 10 ? "0" : "") + length.getSeconds())
     );
   }
 
   function getVideoViews(views: number): string {
-    return views < 1000 ? "" + views : Math.floor(views / 1000) + "k";
+    let ret = "" + views;
+
+    if (views > 1000000000) {
+      return Math.floor(views / 1000000000) + "B";
+    } else if (views > 1000000) {
+      return Math.floor(views / 1000000) + "M";
+    } else if (views > 1000) {
+      return Math.floor(views / 1000) + "K";
+    }
+
+    return views.toString();
   }
 
   return (
@@ -83,7 +94,7 @@ function Video({ metadata }: VideoProps) {
                 {getVideoViews(metadata.views)} views
               </p>
               <FiberManualRecordIcon className="stats-separator" />
-              <p className="video-age">{getVideoAge(metadata.age)} ago</p>
+              <p className="video-age">{getVideoAge(metadata.uploaded)} ago</p>
             </div>
           </div>
           <div className="video-menu">

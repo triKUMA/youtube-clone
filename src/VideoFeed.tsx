@@ -5,9 +5,8 @@ import "./VideoFeed.css";
 import VideoGroup from "./VideoGroup";
 import Channel from "./Channel";
 import {
-  RandChannel,
-  RandThumbnail,
-  RandTitle,
+  RandCovidMetadata,
+  RandTrendingMetadata,
   RandVideoMetadata,
 } from "./RandomData";
 
@@ -47,7 +46,7 @@ function VideoFeed() {
       </VideoGroup>
       <VideoGroup title="Trending" initial={[1, videoColumns]}>
         {[...Array(3 * videoColumns)].map((value: undefined, index: number) => (
-          <Video metadata={RandVideoMetadata()} />
+          <Video metadata={RandTrendingMetadata()} />
         ))}
       </VideoGroup>
       <VideoGroup>
@@ -57,7 +56,7 @@ function VideoFeed() {
       </VideoGroup>
       <VideoGroup title="COVID-19 news" initial={[1, videoColumns]}>
         {[...Array(1 * videoColumns)].map((value: undefined, index: number) => (
-          <Video metadata={RandVideoMetadata()} />
+          <Video metadata={RandCovidMetadata()} />
         ))}
       </VideoGroup>
       <VideoGroup>

@@ -71,19 +71,20 @@ button {
 }
 
 .channel-name {
-  width: 100%;
+  max-width: 100%;
   display: flex;
-  align-items: center;
+  overflow: hidden;
 
   margin-bottom: 0.25em;
 }
 
 .channel-name > button {
+  text-align: left;
   color: #606060;
   font-size: 12px;
   font-weight: 300;
   overflow: hidden;
-  text-overflow: ellipsis;
+  text-overflow: clip;
 }
 
 .channel-name > button:hover {
@@ -92,7 +93,6 @@ button {
 
 .verified {
   color: #606060;
-  margin-top: -1.5px;
   width: 14px !important;
   height: 14px !important;
   margin-left: 0.15em;
@@ -133,6 +133,6 @@ button {
   display: none;
 }
 
-.video:hover > .video-details > .video-menu > * {
+.video:hover .video-menu > * {
   display: inline;
 }
