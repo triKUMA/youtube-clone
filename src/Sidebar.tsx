@@ -42,7 +42,7 @@ function Sidebar(props: SidebarProps) {
   function setSidebarWidth() {
     document.documentElement.style.setProperty(
       "--sidebar-width",
-      !props.collapsed ? "15em" : window.innerWidth > 792 ? "4.5em" : "0"
+      !props.collapsed ? "15em" : window.innerWidth > 792 ? "4.5em" : "0em"
     );
 
     document.documentElement.style.setProperty(
@@ -53,11 +53,13 @@ function Sidebar(props: SidebarProps) {
           : "4.5em"
         : window.innerWidth > 792
         ? "4.5em"
-        : "0"
+        : "0em"
     );
   }
 
-  useEffect(() => {setSidebarWidth()}, [props.collapsed]);
+  useEffect(() => {
+    setSidebarWidth();
+  }, [props.collapsed]);
 
   window.addEventListener("resize", () => {
     setSidebarWidth();
