@@ -9,7 +9,7 @@
   scrollbar-width: thin;
   scrollbar-color: var(--primary-colour) var(--primary-colour);
   padding-block: 0.5em;
-  z-index: 1000;
+  z-index: 2000;
 }
 
 .sidebar:hover {
@@ -82,4 +82,14 @@
   padding-left: 2px;
   color: #7d7d7d;
   font-size: 12px;
+}
+
+@media screen and (max-width: 792px) {
+  .sidebar {
+    left: calc(var(--sidebar-width) * -1);
+  }
+
+  .toggle.sidebar {
+    left: 0;
+  }
 }

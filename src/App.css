@@ -13,7 +13,7 @@
 
 .feed {
   flex: 1;
-  margin-left: var(--sidebar-width);
+  margin-left: var(--sidebar-width-adjustment);
   margin-top: var(--header-height);
   width: 50%;
   height: calc(100% - var(--header-height));

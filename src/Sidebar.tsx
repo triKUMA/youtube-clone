@@ -30,6 +30,7 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import SlideshowIcon from "@mui/icons-material/Slideshow";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
+import { useEffect } from "react";
 
 interface SidebarProps {
   user: boolean;
@@ -38,13 +39,38 @@ interface SidebarProps {
 }
 
 function Sidebar(props: SidebarProps) {
-  document.documentElement.style.setProperty(
-    "--sidebar-width",
-    !props.collapsed ? "15em" : "4.5em"
-  );
+  function setSidebarWidth() {
+    document.documentElement.style.setProperty(
+      "--sidebar-width",
+      !props.collapsed ? "15em" : window.innerWidth > 792 ? "4.5em" : "0"
+    );
+
+    document.documentElement.style.setProperty(
+      "--sidebar-width-adjustment",
+      window.innerWidth > 1310
+        ? !props.collapsed
+          ? "15em"
+          : "4.5em"
+        : window.innerWidth > 792
+        ? "4.5em"
+        : "0"
+    );
+  }
+
+  useEffect(() => {setSidebarWidth()}, [props.collapsed]);
+
+  window.addEventListener("resize", () => {
+    setSidebarWidth();
+  });
 
   return (
-    <div className="sidebar">
+    <div
+      className={
+        "sidebar" +
+        (!props.collapsed ? " toggle" : "") +
+        (window.innerWidth <= 1310 ? " float" : "")
+      }
+    >
       <SidebarElement
         collapse={props.collapsed}
         active

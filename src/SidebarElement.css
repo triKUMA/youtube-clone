@@ -8,6 +8,24 @@
   cursor: pointer;
 }
 
+.sidebarElement:hover {
+  background-color: var(--background-colour);
+}
+
+.collapse.sidebarElement {
+  flex-direction: column;
+  justify-content: center;
+  height: 5.5em;
+}
+
+.sidebarElement.active {
+  background-color: #e0e0e0;
+}
+
+.sidebarElement.active:hover {
+  background-color: var(--secondary-colour);
+}
+
 .icon {
   margin-inline: 1em;
 }
@@ -21,32 +39,20 @@
   text-overflow: ellipsis;
 }
 
-.sidebarElement:hover {
-  background-color: var(--background-colour);
-}
-
-.sidebarElement.active {
-  background-color: #e0e0e0;
+.collapse.sidebarElement > p {
+  text-align: center;
+  font-size: 10px;
+  margin-top: 0.5em;
 }
 
 .sidebarElement.active > p {
   font-weight: 600;
 }
 
-.sidebarElement.active:hover {
-  background-color: var(--secondary-colour);
-}
-
-.collapse.sidebarElement {
-  flex-direction: column;
-  justify-content: center;
-  height: 5.5em;
-}
-
-.collapse.sidebarElement > p {
-  text-align: center;
-  font-size: 10px;
-  margin-top: 0.5em;
+.rounded {
+  border-radius: 10em;
+  background-color: #404040;
+  color: white;
 }
 
 .rounded.icon {
@@ -54,12 +60,6 @@
   width: 16px !important;
   height: 16px !important;
   padding: 0.15em;
-}
-
-.rounded {
-  border-radius: 10em;
-  background-color: #404040;
-  color: white;
 }
 
 .rounded.red {
