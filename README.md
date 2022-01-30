@@ -1,6 +1,6 @@
 # YouTube Clone
 
-This project is aimed at being a copy of the [YouTube][https://www.youtube.com] home page.
+This project is aimed at being a copy of the [YouTube](https://www.youtube.com) home page.
 
 ## Project Goals
 
