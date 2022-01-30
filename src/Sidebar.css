@@ -13,7 +13,7 @@
 }
 
 .sidebar:hover {
-  scrollbar-color: var(--text-colour) var(--primary-color);
+  scrollbar-color: var(--text-colour) var(--primary-colour);
 }
 
 .sidebar-element {

@@ -58,19 +58,20 @@ function Sidebar(props: SidebarProps) {
   }
 
   useEffect(() => {
+    window.addEventListener("resize", () => {
+      setSidebarWidth();
+    });
+  }, []);
+
+  useEffect(() => {
     setSidebarWidth();
   }, [props.collapsed]);
-
-  window.addEventListener("resize", () => {
-    setSidebarWidth();
-  });
 
   return (
     <div
       className={
         "sidebar" +
-        (!props.collapsed ? " toggle" : "") +
-        (window.innerWidth <= 1310 ? " float" : "")
+        (window.innerWidth <= 792 && !props.collapsed ? " toggle" : "")
       }
     >
       <SidebarElement
