@@ -1,10 +1,8 @@
 .video {
+  position: relative;
   background: none;
-  width: 100%;
-  overflow: hidden;
+  min-width: 100%;
   margin-bottom: 1.5em;
-  /* display: flex;
-  flex-direction: column; */
 }
 
 button {
@@ -37,13 +35,14 @@ button {
   padding: 0.085em 0.35em 0.15em 0.35em;
   border-radius: 2px;
   font-size: 12px;
-  margin-bottom: -1em;
+  margin-bottom: -1.5em;
 }
 
 .video-details {
   width: 100%;
   display: flex;
   align-items: flex-start;
+  overflow: hidden;
 }
 
 .channel-avatar {
@@ -55,6 +54,7 @@ button {
 .video-details-text {
   width: 100%;
   overflow: hidden;
+  margin-right: 2em;
 }
 
 .video-title {
@@ -126,7 +126,10 @@ button {
 }
 
 .video-menu {
-  width: 3em;
+  width: 1.75em;
+  overflow: visible;
+  position: absolute;
+  right: 0;
 }
 
 .video-menu > * {

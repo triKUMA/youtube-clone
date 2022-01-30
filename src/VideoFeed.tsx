@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import FeedBanner from "./FeedBanner";
-import Video from "./Video";
 import "./VideoFeed.css";
 import VideoGroup from "./VideoGroup";
 import {
@@ -58,7 +57,8 @@ function VideoFeed() {
   }
 
   window.addEventListener("resize", () => {
-    setVideoColumns(getVideoColumnsAmt());
+    const columnsAmt = getVideoColumnsAmt();
+    setVideoColumns(columnsAmt);
   });
 
   return (
@@ -82,7 +82,7 @@ function VideoFeed() {
             trendingFeed,
             setTrendingFeed,
             index,
-            RandVideoMetadata
+            RandTrendingMetadata
           )
         }
         videoRange={[0, 3 * videoColumns]}

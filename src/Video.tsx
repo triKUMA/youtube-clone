@@ -7,17 +7,15 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import VideoMetadata from "./VideoMetadata";
 import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
-import SidebarElement from "./SidebarElement";
 
 interface VideoProps {
   metadata: VideoMetadata;
+  id: number;
 }
 
-function Video({ metadata }: VideoProps) {
+function Video({ metadata, id }: VideoProps) {
   const [displayMenuButton, setDisplayMenuButton] = useState(false);
   const [menuActive, setMenuActive] = useState(false);
-
-  const menuButton = document.querySelector("video-menu");
 
   const vidPlaceholder =
     "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Freactnativecode.com%2Fwp-content%2Fuploads%2F2018%2F02%2FDefault_Image_Thumbnail.png&f=1&nofb=1";
@@ -85,42 +83,41 @@ function Video({ metadata }: VideoProps) {
           src={metadata.thumbnail ? metadata.thumbnail : vidPlaceholder}
           alt="thumbnail"
         />
-        <p className="video-length">{getVideoLength(metadata.length)}</p>
-        <div className="video-details">
-          <button>
-            <Avatar
-              className="channel-avatar"
-              src={metadata.channel.profileUrl}
-            />
-          </button>
-          <div className="video-details-text">
-            <p className="video-title">{metadata.title}</p>
-            <div className="channel-name">
-              <button>{metadata.channel.name}</button>
-              {metadata.channel.verified && (
-                <CheckCircleIcon className="verified" />
-              )}
-            </div>
-
-            <div className="video-stats">
-              <p className="video-views">
-                {getVideoViews(metadata.views)} views
-              </p>
-              <FiberManualRecordIcon className="stats-separator" />
-              <p className="video-age">{getVideoAge(metadata.uploaded)} ago</p>
-            </div>
+      </button>
+      <p className="video-length">{getVideoLength(metadata.length)}</p>
+      <div className="video-details">
+        <button>
+          <Avatar
+            className="channel-avatar"
+            src={metadata.channel.profileUrl}
+          />
+        </button>
+        <div className="video-details-text">
+          <p className="video-title">{metadata.title}</p>
+          <div className="channel-name">
+            <button>{metadata.channel.name}</button>
+            {metadata.channel.verified && (
+              <CheckCircleIcon className="verified" />
+            )}
           </div>
-          <div className={"video-menu" + (displayMenuButton ? " active" : "")}>
-            <Menu
-              menuIcon={MoreVertIcon}
-              items={[{ Icon: PlaylistPlayIcon, title: "Add to queue" }]}
-              onClick={() => {
-                setMenuActive(!menuActive);
-              }}
-            />
+
+          <div className="video-stats">
+            <p className="video-views">{getVideoViews(metadata.views)} views</p>
+            <FiberManualRecordIcon className="stats-separator" />
+            <p className="video-age">{getVideoAge(metadata.uploaded)} ago</p>
           </div>
         </div>
-      </button>
+        <div className={"video-menu" + (displayMenuButton ? " active" : "")}>
+          <Menu
+            menuIcon={MoreVertIcon}
+            items={[{ Icon: PlaylistPlayIcon, title: "Add to queue" }]}
+            onClick={() => {
+              setMenuActive(!menuActive);
+            }}
+            id={1000 + id}
+          />
+        </div>
+      </div>
     </div>
   );
 }

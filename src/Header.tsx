@@ -21,6 +21,13 @@ import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import FeedbackOutlinedIcon from "@mui/icons-material/FeedbackOutlined";
 import KeyboardAltOutlinedIcon from "@mui/icons-material/KeyboardAltOutlined";
+import SensorsIcon from "@mui/icons-material/Sensors";
+import SlideshowIcon from "@mui/icons-material/Slideshow";
+import AccountBoxOutlinedIcon from "@mui/icons-material/AccountBoxOutlined";
+import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined";
+import DisplaySettingsIcon from "@mui/icons-material/DisplaySettings";
+import SwitchAccountOutlinedIcon from "@mui/icons-material/SwitchAccountOutlined";
+import LogoutIcon from "@mui/icons-material/Logout";
 
 interface HeaderProps {
   user: boolean;
@@ -55,7 +62,11 @@ function Header(props: HeaderProps) {
         {props.user && (
           <Menu
             menuIcon={VideoCameraFrontOutlinedIcon}
-            items={[{ Icon: YouTubeIcon, title: "" }]}
+            items={[
+              { Icon: SlideshowIcon, title: "Upload video" },
+              { Icon: SensorsIcon, title: "Go live" },
+            ]}
+            id={1}
           />
         )}
         <Menu
@@ -84,11 +95,13 @@ function Header(props: HeaderProps) {
               redVariant: true,
             },
           ]}
+          id={2}
         />
         {props.user ? (
           <Menu
             menuIcon={NotificationsOutlinedIcon}
-            items={[{ Icon: YouTubeIcon, title: "" }]}
+            items={[{ title: "Notifications" }]}
+            id={3}
           />
         ) : (
           <Menu
@@ -135,10 +148,71 @@ function Header(props: HeaderProps) {
                 expandable: true,
               },
             ]}
+            id={4}
           />
         )}
         {props.user ? (
-          <Menu menuIcon="?" items={[{ Icon: YouTubeIcon, title: "" }]} />
+          <Menu
+            menuIcon="?"
+            items={[
+              { title: "Manage your Google Account", breakAfter: true },
+              { Icon: AccountBoxOutlinedIcon, title: "Your channel" },
+              { Icon: PaidOutlinedIcon, title: "Purchases and memberships" },
+              { Icon: DisplaySettingsIcon, title: "YouTube Studio" },
+              {
+                Icon: SwitchAccountOutlinedIcon,
+                title: "Switch account",
+                expandable: true,
+              },
+              {
+                Icon: LogoutIcon,
+                title: "Sign out",
+                breakAfter: true,
+                onClick: props.onUserClick,
+              },
+              {
+                Icon: Brightness2OutlinedIcon,
+                title: "Appearance: Light",
+                expandable: true,
+              },
+              {
+                Icon: TranslateIcon,
+                title: "Language: English",
+                expandable: true,
+              },
+              {
+                Icon: LanguageIcon,
+                title: "Location: Australia",
+                expandable: true,
+              },
+              {
+                Icon: SettingsOutlinedIcon,
+                title: "Settings",
+              },
+              {
+                Icon: ContactPageOutlinedIcon,
+                title: "Your data in YouTube",
+              },
+              {
+                Icon: HelpOutlineIcon,
+                title: "Help",
+              },
+              {
+                Icon: FeedbackOutlinedIcon,
+                title: "Send feedback",
+              },
+              {
+                Icon: KeyboardAltOutlinedIcon,
+                title: "Keyboard shortcuts",
+                breakAfter: true,
+              },
+              {
+                title: "Restricted Mode: Off",
+                expandable: true,
+              },
+            ]}
+            id={5}
+          />
         ) : (
           <button className="signIn" onClick={props.onUserClick}>
             <AccountCircleOutlinedIcon className="signIn-icon" />

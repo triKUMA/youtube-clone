@@ -25,6 +25,7 @@ interface MenuProps {
     | string;
   items: MenuItem[];
   onClick?: () => void;
+  id: number;
 }
 
 function Menu(props: MenuProps) {
@@ -37,7 +38,9 @@ function Menu(props: MenuProps) {
   });
 
   const manageMenuBlur = (e: React.FocusEvent<HTMLButtonElement, Element>) => {
-    const menuIcon = document.querySelector("menu-button") as HTMLButtonElement;
+    const menuIcon = document.getElementsByClassName("menu-button")[
+      props.id
+    ] as HTMLButtonElement;
     if (
       menuIcon.parentElement !== e.relatedTarget?.parentElement?.parentElement
     ) {
@@ -58,7 +61,9 @@ function Menu(props: MenuProps) {
           }
         }}
         onBlur={(e) => {
-          manageMenuBlur(e);
+          setTimeout(() => {
+            manageMenuBlur(e);
+          }, 100);
         }}
       >
         {typeof props.menuIcon === "string" ? (
