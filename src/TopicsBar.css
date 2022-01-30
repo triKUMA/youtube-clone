@@ -5,10 +5,10 @@
   border-top: 1px solid var(--secondary-colour);
   border-bottom: 1px solid var(--secondary-colour);
   height: 3.5em;
-  width: calc(100% - var(--sidebar-width) - 2.5em);
+  width: calc(100% - var(--sidebar-width) - 4.5em);
   display: flex;
   align-items: center;
-  padding-inline: 1.2em;
+  padding-inline: 2.2em;
   overflow: hidden;
   overflow-x: scroll;
   scrollbar-width: none;
@@ -46,4 +46,44 @@
   background-color: var(--text-colour);
   color: var(--primary-colour);
   border: 1px solid var(--text-colour);
+}
+
+.scroll-left,
+.scroll-right {
+  position: fixed;
+  z-index: var(--sidebar-width);
+  z-index: 500;
+  height: var(--header-height);
+  width: 4.5em;
+}
+
+.scroll-left {
+  left: calc(var(--sidebar-width) + (var(--sidebar-width) / 5));
+  background-image: linear-gradient(
+    to right,
+    var(--primary-colour) 50%,
+    transparent
+  );
+}
+
+.scroll-right {
+  right: 0;
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--primary-colour) 50%
+  );
+}
+
+.scroll-left > * {
+  margin-right: 0.5em;
+}
+
+.scroll-right > * {
+  margin-left: -0.5em;
+}
+
+.disable.scroll-left,
+.disable.scroll-right {
+  display: none;
 }
