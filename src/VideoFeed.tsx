@@ -1,17 +1,41 @@
-import React, { useEffect, useReducer, useState } from "react";
+import React, { useEffect, useState } from "react";
 import FeedBanner from "./FeedBanner";
 import Video from "./Video";
 import "./VideoFeed.css";
 import VideoGroup from "./VideoGroup";
-import Channel from "./Channel";
 import {
   RandCovidMetadata,
   RandTrendingMetadata,
   RandVideoMetadata,
 } from "./RandomData";
+import VideoMetadata from "./VideoMetadata";
 
 function VideoFeed() {
   const [videoColumns, setVideoColumns] = useState(getVideoColumnsAmt());
+  const [generalFeed, setGeneralFeed] = useState(
+    new Map<number, VideoMetadata>()
+  );
+  const [trendingFeed, setTrendingFeed] = useState(
+    new Map<number, VideoMetadata>()
+  );
+  const [covidFeed, setCovidFeed] = useState(new Map<number, VideoMetadata>());
+
+  function getVideoFromFeed(
+    feed: Map<number, VideoMetadata>,
+    dispatch: (value: React.SetStateAction<Map<number, VideoMetadata>>) => void,
+    index: number,
+    metadataStream: Function
+  ): VideoMetadata {
+    let entry = feed.get(index);
+
+    if (typeof entry === "undefined") {
+      let newFeed = feed;
+      entry = newFeed.set(index, metadataStream()).get(index);
+      dispatch(newFeed);
+    }
+
+    return typeof entry !== "undefined" ? entry : metadataStream();
+  }
 
   function getVideoColumnsAmt(): number {
     let columnsAmt = 5;
@@ -39,31 +63,65 @@ function VideoFeed() {
 
   return (
     <div className="videoFeed">
-      <VideoGroup>
-        {[...Array(2 * videoColumns)].map((value: undefined, index: number) => (
-          <Video metadata={RandVideoMetadata()} />
-        ))}
-      </VideoGroup>
-      <VideoGroup title="Trending" initial={[1, videoColumns]}>
-        {[...Array(3 * videoColumns)].map((value: undefined, index: number) => (
-          <Video metadata={RandTrendingMetadata()} />
-        ))}
-      </VideoGroup>
-      <VideoGroup>
-        {[...Array(3 * videoColumns)].map((value: undefined, index: number) => (
-          <Video metadata={RandVideoMetadata()} />
-        ))}
-      </VideoGroup>
-      <VideoGroup title="COVID-19 news" initial={[1, videoColumns]}>
-        {[...Array(1 * videoColumns)].map((value: undefined, index: number) => (
-          <Video metadata={RandCovidMetadata()} />
-        ))}
-      </VideoGroup>
-      <VideoGroup>
-        {[...Array(3 * videoColumns)].map((value: undefined, index: number) => (
-          <Video metadata={RandVideoMetadata()} />
-        ))}
-      </VideoGroup>
+      <VideoGroup
+        feed={(index) =>
+          getVideoFromFeed(
+            generalFeed,
+            setGeneralFeed,
+            index,
+            RandVideoMetadata
+          )
+        }
+        videoRange={[0, 2 * videoColumns]}
+        columns={videoColumns}
+      />
+      <VideoGroup
+        title="Trending"
+        feed={(index) =>
+          getVideoFromFeed(
+            trendingFeed,
+            setTrendingFeed,
+            index,
+            RandVideoMetadata
+          )
+        }
+        videoRange={[0, 3 * videoColumns]}
+        columns={videoColumns}
+        initialRows={1}
+      />
+      <VideoGroup
+        feed={(index) =>
+          getVideoFromFeed(
+            generalFeed,
+            setGeneralFeed,
+            index,
+            RandVideoMetadata
+          )
+        }
+        videoRange={[2 * videoColumns, 3 * videoColumns]}
+        columns={videoColumns}
+      />
+      <VideoGroup
+        title="COVID-19 news"
+        feed={(index) =>
+          getVideoFromFeed(covidFeed, setCovidFeed, index, RandCovidMetadata)
+        }
+        videoRange={[0, 2 * videoColumns]}
+        columns={videoColumns}
+        initialRows={1}
+      />
+      <VideoGroup
+        feed={(index) =>
+          getVideoFromFeed(
+            generalFeed,
+            setGeneralFeed,
+            index,
+            RandVideoMetadata
+          )
+        }
+        videoRange={[5 * videoColumns, 3 * videoColumns]}
+        columns={videoColumns}
+      />
       {videoColumns >= 4 && (
         <FeedBanner
           imgSrc="https://www.gstatic.com/youtube/img/promos/growth/24130705fcdd89c3d8453b2253b97e4ec8ee91660021ac874249f99ab7e2f015_480x270.png"
@@ -73,11 +131,18 @@ function VideoFeed() {
           darkVariant
         />
       )}
-      <VideoGroup>
-        {[...Array(6 * videoColumns)].map((value: undefined, index: number) => (
-          <Video metadata={RandVideoMetadata()} />
-        ))}
-      </VideoGroup>
+      <VideoGroup
+        feed={(index) =>
+          getVideoFromFeed(
+            generalFeed,
+            setGeneralFeed,
+            index,
+            RandVideoMetadata
+          )
+        }
+        videoRange={[8 * videoColumns, 6 * videoColumns]}
+        columns={videoColumns}
+      />
       {videoColumns >= 4 && (
         <FeedBanner
           imgSrc="https://www.gstatic.com/youtube/img/promos/growth/de0fdfa3872e7bcb579ee98472aa76e8166046950ef7c0d7887a7de7534949ba_480x270.png"
@@ -86,11 +151,18 @@ function VideoFeed() {
           cta="Learn More"
         />
       )}
-      <VideoGroup>
-        {[...Array(4 * videoColumns)].map((value: undefined, index: number) => (
-          <Video metadata={RandVideoMetadata()} />
-        ))}
-      </VideoGroup>
+      <VideoGroup
+        feed={(index) =>
+          getVideoFromFeed(
+            generalFeed,
+            setGeneralFeed,
+            index,
+            RandVideoMetadata
+          )
+        }
+        videoRange={[4 * videoColumns, 4 * videoColumns]}
+        columns={videoColumns}
+      />
     </div>
   );
 }
