@@ -354,8 +354,7 @@ const covidMetadata: VideoMetadata[] = [
 
 const allMetadata: VideoMetadata[] = new Array<VideoMetadata>().concat(
   generalMetadata,
-  trendingMetadata,
-  covidMetadata
+  trendingMetadata
 );
 
 function getRand<T>(input: T[]): T {

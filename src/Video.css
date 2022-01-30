@@ -133,6 +133,6 @@ button {
   display: none;
 }
 
-.video:hover .video-menu > * {
+.video-menu.active > * {
   display: inline;
 }

@@ -10,7 +10,17 @@ import VideoCameraFrontOutlinedIcon from "@mui/icons-material/VideoCameraFrontOu
 import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import Menu from "./Menu";
-import { Avatar } from "@mui/material";
+import LiveTvIcon from "@mui/icons-material/LiveTv";
+import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
+import ChildCareIcon from "@mui/icons-material/ChildCare";
+import Brightness2OutlinedIcon from "@mui/icons-material/Brightness2Outlined";
+import TranslateIcon from "@mui/icons-material/Translate";
+import LanguageIcon from "@mui/icons-material/Language";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
+import ContactPageOutlinedIcon from "@mui/icons-material/ContactPageOutlined";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
+import FeedbackOutlinedIcon from "@mui/icons-material/FeedbackOutlined";
+import KeyboardAltOutlinedIcon from "@mui/icons-material/KeyboardAltOutlined";
 
 interface HeaderProps {
   user: boolean;
@@ -42,15 +52,93 @@ function Header(props: HeaderProps) {
         </button>
       </form>
       <div className="header-right">
-        {props.user && <Menu Icon={VideoCameraFrontOutlinedIcon} />}
-        <Menu Icon={AppsIcon} />
+        {props.user && (
+          <Menu
+            menuIcon={VideoCameraFrontOutlinedIcon}
+            items={[{ Icon: YouTubeIcon, title: "" }]}
+          />
+        )}
+        <Menu
+          menuIcon={AppsIcon}
+          items={[
+            {
+              Icon: LiveTvIcon,
+              title: "YouTube TV",
+              redVariant: true,
+              breakAfter: true,
+            },
+            {
+              Icon: PlayCircleOutlineIcon,
+              title: "YouTube Music",
+              redVariant: true,
+            },
+            {
+              Icon: ChildCareIcon,
+              title: "YouTube Kids",
+              redVariant: true,
+              breakAfter: true,
+            },
+            {
+              Icon: YouTubeIcon,
+              title: "YouTube for Artists",
+              redVariant: true,
+            },
+          ]}
+        />
         {props.user ? (
-          <Menu Icon={NotificationsOutlinedIcon} />
+          <Menu
+            menuIcon={NotificationsOutlinedIcon}
+            items={[{ Icon: YouTubeIcon, title: "" }]}
+          />
         ) : (
-          <Menu Icon={MoreVertIcon} />
+          <Menu
+            menuIcon={MoreVertIcon}
+            items={[
+              {
+                Icon: Brightness2OutlinedIcon,
+                title: "Appearance: Light",
+                expandable: true,
+              },
+              {
+                Icon: TranslateIcon,
+                title: "Language: English",
+                expandable: true,
+              },
+              {
+                Icon: LanguageIcon,
+                title: "Location: Australia",
+                expandable: true,
+              },
+              {
+                Icon: SettingsOutlinedIcon,
+                title: "Settings",
+              },
+              {
+                Icon: ContactPageOutlinedIcon,
+                title: "Your data in YouTube",
+              },
+              {
+                Icon: HelpOutlineIcon,
+                title: "Help",
+              },
+              {
+                Icon: FeedbackOutlinedIcon,
+                title: "Send feedback",
+              },
+              {
+                Icon: KeyboardAltOutlinedIcon,
+                title: "Keyboard shortcuts",
+                breakAfter: true,
+              },
+              {
+                title: "Restricted Mode: Off",
+                expandable: true,
+              },
+            ]}
+          />
         )}
         {props.user ? (
-          <Menu avatar="?" /*onClick={props.onUserClick}*/ />
+          <Menu menuIcon="?" items={[{ Icon: YouTubeIcon, title: "" }]} />
         ) : (
           <button className="signIn" onClick={props.onUserClick}>
             <AccountCircleOutlinedIcon className="signIn-icon" />

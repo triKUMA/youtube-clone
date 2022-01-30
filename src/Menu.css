@@ -1,4 +1,5 @@
 .menu-button {
+  position: relative;
   background: none;
   border: none;
   outline: none;
@@ -11,4 +12,58 @@
   height: 1.6em !important;
   margin-left: 0.35em;
   margin-right: 0.5em;
+}
+
+.menu-expanded {
+  /* border-inline: 1px solid var(--secondary-colour); */
+  border-radius: 5px;
+  background-color: var(--primary-colour);
+  z-index: 10000;
+  overflow: visible;
+  position: absolute;
+  padding-block: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  padding-left: 1rem;
+  padding-block: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu-item:hover,
+.menu-item:focus {
+  background-color: var(--background-colour);
+}
+
+.menu-item-content {
+  display: flex;
+  align-items: center;
+  margin-right: 2.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.menu-item-avatar,
+.menu-item-icon {
+  margin-right: 1rem;
+}
+
+.red.menu-item-avatar,
+.red.menu-item-icon {
+  color: red;
+}
+
+.menu-item > p {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.menu-item-expandIcon {
+  justify-self: flex-end;
+  margin-inline: 1rem;
 }

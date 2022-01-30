@@ -1,6 +1,5 @@
-import { Avatar, AvatarTypeMap, SvgIconTypeMap } from "@mui/material";
+import { Avatar, SvgIconTypeMap } from "@mui/material";
 import { OverridableComponent } from "@mui/material/OverridableComponent";
-import React from "react";
 import "./SidebarElement.css";
 import SensorsIcon from "@mui/icons-material/Sensors";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";

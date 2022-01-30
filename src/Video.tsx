@@ -1,18 +1,24 @@
 import { Avatar } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import "./Video.css";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import Menu from "./Menu";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import Channel from "./Channel";
 import VideoMetadata from "./VideoMetadata";
+import PlaylistPlayIcon from "@mui/icons-material/PlaylistPlay";
+import SidebarElement from "./SidebarElement";
 
 interface VideoProps {
   metadata: VideoMetadata;
 }
 
 function Video({ metadata }: VideoProps) {
+  const [displayMenuButton, setDisplayMenuButton] = useState(false);
+  const [menuActive, setMenuActive] = useState(false);
+
+  const menuButton = document.querySelector("video-menu");
+
   const vidPlaceholder =
     "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Freactnativecode.com%2Fwp-content%2Fuploads%2F2018%2F02%2FDefault_Image_Thumbnail.png&f=1&nofb=1";
 
@@ -52,8 +58,6 @@ function Video({ metadata }: VideoProps) {
   }
 
   function getVideoViews(views: number): string {
-    let ret = "" + views;
-
     if (views > 1000000000) {
       return Math.floor(views / 1000000000) + "B";
     } else if (views > 1000000) {
@@ -66,11 +70,20 @@ function Video({ metadata }: VideoProps) {
   }
 
   return (
-    <div className="video">
+    <div
+      className="video"
+      onMouseOver={() => {
+        setDisplayMenuButton(true);
+      }}
+      onMouseLeave={() => {
+        setDisplayMenuButton(false || menuActive);
+      }}
+    >
       <button>
         <img
           className="video-thumbnail"
           src={metadata.thumbnail ? metadata.thumbnail : vidPlaceholder}
+          alt="thumbnail"
         />
         <p className="video-length">{getVideoLength(metadata.length)}</p>
         <div className="video-details">
@@ -97,8 +110,14 @@ function Video({ metadata }: VideoProps) {
               <p className="video-age">{getVideoAge(metadata.uploaded)} ago</p>
             </div>
           </div>
-          <div className="video-menu">
-            <Menu Icon={MoreVertIcon} />
+          <div className={"video-menu" + (displayMenuButton ? " active" : "")}>
+            <Menu
+              menuIcon={MoreVertIcon}
+              items={[{ Icon: PlaylistPlayIcon, title: "Add to queue" }]}
+              onClick={() => {
+                setMenuActive(!menuActive);
+              }}
+            />
           </div>
         </div>
       </button>

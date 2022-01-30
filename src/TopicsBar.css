@@ -13,7 +13,7 @@
   overflow-x: scroll;
   scrollbar-width: none;
   background-color: var(--primary-colour);
-  z-index: 1000;
+  z-index: 100;
 }
 
 .topicsBar::-webkit-scrollbar {
@@ -36,7 +36,8 @@
   transition: background 0.25s ease;
 }
 
-.topic:hover {
+.topic:hover,
+.topic:focus {
   background-color: #e5e5e5;
   transition: background 0.25s ease;
 }
