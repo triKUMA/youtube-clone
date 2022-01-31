@@ -1,4 +1,3 @@
-import { TimeLike } from "fs";
 import Channel from "./Channel";
 
 export default interface VideoMetadata {

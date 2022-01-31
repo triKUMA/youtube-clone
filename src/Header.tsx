@@ -1,4 +1,3 @@
-import React from "react";
 import "./Header.css";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import MenuIcon from "@mui/icons-material/Menu";

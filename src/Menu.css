@@ -3,7 +3,6 @@
 }
 
 .menu-button {
-  /* position: relative; */
   background: none;
   border: none;
   outline: none;
@@ -19,13 +18,11 @@
 }
 
 .menu-expanded {
-  /* border-inline: 1px solid var(--secondary-colour); */
   border-radius: 5px;
   background-color: var(--primary-colour);
   z-index: 10000;
   overflow: visible;
   position: absolute;
-  /* left: -600%; */
   top: 2rem;
   right: 0;
   padding-block: 0.5rem;

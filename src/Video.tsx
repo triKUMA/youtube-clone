@@ -1,5 +1,5 @@
 import { Avatar } from "@mui/material";
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Video.css";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
 import Menu from "./Menu";

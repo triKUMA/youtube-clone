@@ -361,7 +361,7 @@ function getRand<T>(input: T[]): T {
   return input[Math.floor(Math.random() * input.length)];
 }
 
-function RandVideoMetadata() {
+function RandGeneralMetadata() {
   return getRand(allMetadata);
 }
 
@@ -373,4 +373,4 @@ function RandCovidMetadata() {
   return getRand(covidMetadata);
 }
 
-export { RandVideoMetadata, RandTrendingMetadata, RandCovidMetadata };
+export { RandGeneralMetadata, RandTrendingMetadata, RandCovidMetadata };

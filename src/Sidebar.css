@@ -12,10 +12,6 @@
   z-index: 2000;
 }
 
-.sidebar:hover {
-  scrollbar-color: var(--text-colour) var(--primary-colour);
-}
-
 .sidebar-element {
   margin-block: 0.5em;
   margin-right: 0;

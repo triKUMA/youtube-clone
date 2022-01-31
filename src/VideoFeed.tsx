@@ -5,7 +5,7 @@ import VideoGroup from "./VideoGroup";
 import {
   RandCovidMetadata,
   RandTrendingMetadata,
-  RandVideoMetadata,
+  RandGeneralMetadata,
 } from "./RandomData";
 import VideoMetadata from "./VideoMetadata";
 
@@ -69,7 +69,7 @@ function VideoFeed() {
             generalFeed,
             setGeneralFeed,
             index,
-            RandVideoMetadata
+            RandGeneralMetadata
           )
         }
         videoRange={[0, 2 * videoColumns]}
@@ -95,7 +95,7 @@ function VideoFeed() {
             generalFeed,
             setGeneralFeed,
             index,
-            RandVideoMetadata
+            RandGeneralMetadata
           )
         }
         videoRange={[2 * videoColumns, 3 * videoColumns]}
@@ -116,7 +116,7 @@ function VideoFeed() {
             generalFeed,
             setGeneralFeed,
             index,
-            RandVideoMetadata
+            RandGeneralMetadata
           )
         }
         videoRange={[5 * videoColumns, 3 * videoColumns]}
@@ -137,7 +137,7 @@ function VideoFeed() {
             generalFeed,
             setGeneralFeed,
             index,
-            RandVideoMetadata
+            RandGeneralMetadata
           )
         }
         videoRange={[8 * videoColumns, 6 * videoColumns]}
@@ -157,7 +157,7 @@ function VideoFeed() {
             generalFeed,
             setGeneralFeed,
             index,
-            RandVideoMetadata
+            RandGeneralMetadata
           )
         }
         videoRange={[4 * videoColumns, 4 * videoColumns]}
