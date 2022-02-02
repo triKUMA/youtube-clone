@@ -157,6 +157,7 @@
 
 .signIn > p {
   text-transform: uppercase;
+  white-space: nowrap;
   font-weight: 500;
 }
 
